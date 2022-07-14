@@ -106,8 +106,11 @@
                         <!-- 상품 상세 정보 섹션 -->
                         <div class="pd-info">
                             <h2 class="pd-title">${p.prName}</h2>
-                            <div class="pd-price"><fmt:formatNumber value="" pattern="#,###"/></div>
-                            <div class="pd-dc-price"><fmt:formatNumber value="${p.prPrice}" pattern="#,###"/>원 <span>[2%]</span></div>
+                            <div class="pd-price">
+                                <fmt:formatNumber value="" pattern="#,###" />
+                            </div>
+                            <div class="pd-dc-price">
+                                <fmt:formatNumber value="${p.prPrice}" pattern="#,###" />원 <span>[2%]</span></div>
                         </div>
 
                         <!-- 배송 정보 / 수량 및 옵션 선택 / 총 주문금액 섹션 -->
@@ -129,17 +132,17 @@
                                         <th>
                                             주문 수량
                                         </th>
-                                         <!-- 장바구니 / 바로구매 버튼 섹션 -->
-                                         <form action="/cart/add" method="post">
-                                        <td class="sale-amount">
-                                            <select name="cartAmount" id="amount" size="1">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        </td>
+                                        <!-- 장바구니 / 바로구매 버튼 섹션 -->
+                                        <form action="/cart/add" method="post">
+                                            <td class="sale-amount">
+                                                <select name="cartAmount" id="amount" size="1">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                            </td>
                                     </tr>
                                     <tr>
                                         <th>
@@ -154,24 +157,24 @@
                                         </td>
                                     </tr>
                                     <!-- 총 주문 금액 -->
-                                     <tr class="total-sum">
+                                    <tr class="total-sum">
                                         <th class="total-text">총 주문 금액</th>
                                         <td class="total-price">
                                             <span class="total-amount"> 총 수량 <span>1</span> 개</span>
                                             <span>9,800</span>원
                                         </td>
-                                    </tr> 
+                                    </tr>
                                 </tbody>
                             </table>
-                           
 
-                                <input type="hidden" name="csId" value="${loginCustomer.csId}"> 
-                                <input type="hidden" name="prCode" value="${p.prCode}">    
 
-                                <div class="sale-basket-btn">
-                                    <button id="opbtn01" type="submit">장바구니</button>
-                                    <button id="opbtn02" type="submit">바로구매</button>
-                                </div> 
+                            <input type="hidden" name="csId" value="${loginCustomer.csId}">
+                            <input type="hidden" name="prCode" value="${p.prCode}">
+
+                            <div class="sale-basket-btn">
+                                <button id="opbtn01" type="submit">장바구니</button>
+                                <button id="opbtn02" type="submit">바로구매</button>
+                            </div>
                             </form>
                         </div>
                     </div>
@@ -245,16 +248,17 @@
                             <p>이 상품과 비슷한 상품</p>
                         </div>
                         <ul class="products-list">
-                            <c:forEach var="a" items="${articles}">    
-                            <li class="product">
-                                <a href="/product/info?prCode=${a.prCode}">
-                                    <img src="/product/list/${a.prThumb}" alt="상품1">
-                                    <div class="box-info">
-                                        <span class="pd_nm">${a.prName}</span>
-                                        <span class="pd_price"><fmt:formatNumber value="${a.prPrice}" pattern="#,###"/>원</span>
-                                    </div>
-                                </a>
-                            </li>
+                            <c:forEach var="a" items="${articles}">
+                                <li class="product">
+                                    <a href="/product/info?prCode=${a.prCode}">
+                                        <img src="/product/list/${a.prThumb}" alt="상품1">
+                                        <div class="box-info">
+                                            <span class="pd_nm">${a.prName}</span>
+                                            <span class="pd_price">
+                                                <fmt:formatNumber value="${a.prPrice}" pattern="#,###" />원</span>
+                                        </div>
+                                    </a>
+                                </li>
                             </c:forEach>
                             <!--  <li class="product">
                                 <a href="#">
@@ -416,14 +420,13 @@
     </div>
 
     <script>
-        function product(a){
-            let result =  parseInt(a) + parseInt(a*0.02);
+        function product(a) {
+            let result = parseInt(a) + parseInt(a * 0.02);
 
             return result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + "원"
         }
 
         document.querySelector('.pd-price').textContent = product('${p.prPrice}');
-        
     </script>
 
 </body>

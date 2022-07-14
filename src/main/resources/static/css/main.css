@@ -1210,11 +1210,21 @@ footer .goTop {
 /* 로그인 팝업 창 컨텐츠 스타일 */
 #login-popup-container .login-popup-box .login-join-box {
     width: 90%;
-    margin: 50px auto;
+    margin: 1rem auto;
+}
+
+/* 창 닫기 버튼 스타일 */
+#login-popup-container .login-popup-box .login-join-box > div {
+    text-align: end;
+}
+
+#login-popup-container .login-popup-box .login-join-box > div i.fa-times {
+    cursor: pointer;
 }
 
 #login-popup-container .login-popup-box .login-join-box .login-text {
     margin-bottom: 1rem;
+    margin-top: 2rem;
 }
 
 /* 상단 로그인 글자 스타일 */
