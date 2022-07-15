@@ -145,18 +145,19 @@
                     <a href="#">Next</a>&ensp; | &ensp;<a href="#">Previous</a>
                 </div>
                 <ul class="products-list">
-                <c:forEach var="a" items="${articles}">    
-                    <li class="product">
-                        <a href="/product/info?prCode=${a.prCode}">
-                            <img src="/product/list/${a.prThumb}" alt="상품1">
-                            <div class="box-info">
-                                <span class="pd_nm">${a.prName}</span>
-                                <span class="pd_price"><fmt:formatNumber value="${a.prPrice}" pattern="#,###"/>원</span>
-                            </div>
-                        </a>
-                    </li>
+                    <c:forEach var="a" items="${articles}">
+                        <li class="product">
+                            <a href="/product/info?prCode=${a.prCode}">
+                                <img src="/product/list/${a.prThumb}" alt="상품1">
+                                <div class="box-info">
+                                    <span class="pd_nm">${a.prName}</span>
+                                    <span class="pd_price">
+                                        <fmt:formatNumber value="${a.prPrice}" pattern="#,###" />원</span>
+                                </div>
+                            </a>
+                        </li>
                     </c:forEach>
-                   <!--  <li class="product">
+                    <!--  <li class="product">
                         <a href="/product/info?prCode=${a.prCode}">
                             <img src="/product/list/${a.prThumb}" alt="상품2">
                             <div class="box-info">
@@ -401,31 +402,34 @@
         <section id="login-popup-container" class="hide__">
             <div class="login-popup-box">
                 <div class="login-join-box">
+                    <div>
+                        <i class="fas fa-times"></i>
+                    </div>
                     <div class="login-text">
                         <p>로그인</p>
                     </div>
                     <form class="idpw-input" action="/customer/login" method="post" autocomplete="off" id="loginForm">
                         <input type="text" name="csId" placeholder="아이디" id="inputId" class="id-pw">
                         <input type="password" name="csPw" placeholder="비밀번호" id="inputPw" class="id-pw">
-                    
-                    <div class="login-id-remember">
-                        <input type="checkbox" checked name="id-remember" class="id-rem">
-                        <p>아이디 저장</p>
-                    </div>
-                    <div class="login-submit-btn"> 
-                        <input type="button" value="로그인" id="loginBtn" class="login-btn">
-                    </div>
-                    <div class="mem-search-join">
-                        <a href="#">아이디/비밀번호 찾기</a>
-                        <a href="#">회원가입</a>
-                    </div>
 
-                    <div class="sns-join">
-                        <button class="login-btn">카카오로 시작하기</button>
-                        <button class="login-btn">네이버로 시작하기</button>
-                        <button class="login-btn">트위터로 시작하기</button>
-                        <button class="login-btn">페이스북으로 시작하기</button>
-                    </div>
+                        <div class="login-id-remember">
+                            <input type="checkbox" checked name="id-remember" class="id-rem">
+                            <p>아이디 저장</p>
+                        </div>
+                        <div class="login-submit-btn">
+                            <input type="button" value="로그인" id="loginBtn" class="login-btn">
+                        </div>
+                        <div class="mem-search-join">
+                            <a href="#">아이디/비밀번호 찾기</a>
+                            <a href="#">회원가입</a>
+                        </div>
+
+                        <div class="sns-join">
+                            <button class="login-btn">카카오로 시작하기</button>
+                            <button class="login-btn">네이버로 시작하기</button>
+                            <button class="login-btn">트위터로 시작하기</button>
+                            <button class="login-btn">페이스북으로 시작하기</button>
+                        </div>
                 </div>
                 </form>
             </div>
@@ -478,42 +482,36 @@
 
 
     <script>
-
         function doDisplay() {
-                document.getElementById("login-popup-container").style.display = "block";
-                document.querySelector(".login-popup-box").style.display = "block";
+            document.getElementById("login-popup-container").style.display = "block";
+            document.querySelector(".login-popup-box").style.display = "block";
         }
 
 
-        $('input[type="text"]').keydown(function() {
-              if (event.keyCode === 13) {
-             event.preventDefault();
-             if( $('#inputId').val() === '' || $('#inputId').val() === null ) {
+        $('input[type="text"]').keydown(function () {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                if ($('#inputId').val() === '' || $('#inputId').val() === null) {
                     //$("#inputId").attr("placeholder", "아이디를 입력하세요");
-                      //$("#inputId").css("background", "#00B261");
+                    //$("#inputId").css("background", "#00B261");
                     alert("아이디를 입력하세요");
                 }
             }
         });
 
 
-        $('input[type="password"]').keydown(function() {
-              if (event.keyCode === 13) {
-             event.preventDefault();
-             if( $('#inputPw').val() === '' || $('#inputPw').val() === null ) {
+        $('input[type="password"]').keydown(function () {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                if ($('#inputPw').val() === '' || $('#inputPw').val() === null) {
                     //$("#inputPw").attr("placeholder", "비밀번호를 입력하세요");
-                   // $("#inputPw").css("background", "#00B261");
-                   alert("비밀번호를 입력하세요");
+                    // $("#inputPw").css("background", "#00B261");
+                    alert("비밀번호를 입력하세요");
                 } else {
                     $("#loginForm").submit();
                 }
             }
         });
-
-
-        
-
-
     </script>
 
 </body>
