@@ -81,7 +81,7 @@
 
         <!-- section content > basket list -->
         <section id="basket-list-container">
-            <div class="basket-list-title hide"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
+            <div class="basket-list-title"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
                 <ul class="basket-select-all">
                     <li><input type="checkbox" class="allCheck" id="check_all" onclick="checkAll();"></li>
                     <li>전체선택</li>
@@ -99,7 +99,7 @@
                 </ul>
             </div>
 
-            <table class="basket-list hide"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
+            <table class="basket-list"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
                 <tbody class="basket-list-pd">
                     <c:forEach var="c" items="${cart}" varStatus="status">
 
@@ -212,7 +212,8 @@
         <!-- section content > basket total -->
         <section id="basket-total-container">
 
-            <div class="hide"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
+        
+            <div class="" id="basket-box"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
                 <table class="basket-total-box">
                     <tbody class="basket-total">
                         <tr>
@@ -318,6 +319,10 @@
     </div>
 
     <script>
+
+          
+
+
         let totalPrice = 0;
         let sum = 0;
         let total = document.querySelector(".orderPrice").textContent;
@@ -325,6 +330,17 @@
         let price = document.querySelector('#prPrice').textContent;
         let input = document.getElementById('input_check');
         let plus_btn = document.getElementById('plus');
+
+        //장바구니에 하나라도 담겨있을 시 hide클래스 추가
+        if(amount){
+               $(".basket-empty").addClass('hide');
+            } else {
+                $(".basket-list-title").addClass('hide');
+                $(".basket-list").addClass('hide');
+                $("#basket-box").addClass('hide');
+            }
+
+
 
         function delivery() {
             /* 배송비 결정 */
@@ -342,8 +358,7 @@
         }
 
 
-        // 체크박스 개별선택, 해제 
-        function calcGoodsPrice(prPrice, obj, cartAm) {
+        
 
         let codeArr = new Array(); 
         let colorArr = new Array();

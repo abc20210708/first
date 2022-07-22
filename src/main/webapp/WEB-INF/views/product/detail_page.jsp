@@ -99,17 +99,6 @@
                                                 </select>
                                             </td>
 
-                                         <!-- 장바구니 / 바로구매 버튼 섹션 -->
-                                    <form action="/cart/add" method="post">
-                                        <td class="sale-amount">
-                                            <select name="cartAmount" id="amount" size="1">
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
-                                            </select>
-                                        </td>
 
                                     </tr>
                                     
@@ -178,9 +167,9 @@
                                 <input type="hidden" name="prCode" value="${p.prCode}">   
                                  
 
-                                <div class="sale-basket-btn">
-                                    <button id="opbtn01" type="image.png">장바구니</button>
-                                    <button id="opbtn02" type="submit">바로구매</button>
+                                <!-- <div class="sale-basket-btn"> -->
+                                    <!-- <button id="opbtn01" type="image.png">장바구니</button> -->
+                                    <!-- <button id="opbtn02" type="submit">바로구매</button> -->
                                 </div> 
 
                             </form>
