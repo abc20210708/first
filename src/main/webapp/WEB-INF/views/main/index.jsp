@@ -6,65 +6,14 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%@ include file="../include/static-head.jsp" %>
     <title>The dishes Mall</title>
-
-    <!-- reset css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-
-    <!-- custom css -->
-    <link rel="stylesheet" href="/css/main.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 </head>
 
 <body>
     <div class="wrap">
         <!-- header -->
-        <header>
-            <div class="inner-header">
-                <h1 class="logo">
-                    <a href="#">
-                        <img src="/image/Title_ex.png" alt="메인 로고 이미지">
-                    </a>
-                </h1>
-
-                <!-- 메인 네비게이션바 -->
-                <nav class="gnb">
-                    <a href="#">신상품</a>
-                    <a href="#">베스트</a>
-                    <a href="#">카테고리</a>
-                </nav>
-                <!-- 검색/찜/장바구니  상품 이름 검색하기 https://mycodearchive.tistory.com/m/183-->
-                <nav class="tnb">
-                    <a href="#">
-                        <form action="/product/list" class="search">
-                            <label>
-                                <span class="lnr lnr-magnifier"></span>
-                                <input type="text" placeholder="검색어를 입력하세요" id="search" name="keyword">
-                                <i class="fas fa-search"></i>
-                            </label>
-                        </form>
-                    </a>
-                    <a href="#" class="sign-in-up" id="singUpBtn" onclick="doDisplay()">
-                        <span>로그인</span>
-                    </a>
-                    <a href="/customer/account" class="sign-in-up">
-                        <span>회원가입</span>
-                    </a>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                    <a href="#" onclick="cartList('${loginCustomer}')"><i class="fas fa-cart-plus"></i></a>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <%@ include file="../include/header.jsp" %>
         <!-- //header -->
 
         <!-- section content container -->
@@ -145,18 +94,19 @@
                     <a href="#">Next</a>&ensp; | &ensp;<a href="#">Previous</a>
                 </div>
                 <ul class="products-list">
-                <c:forEach var="a" items="${articles}">    
-                    <li class="product">
-                        <a href="/product/info?prCode=${a.prCode}">
-                            <img src="/product/list/${a.prThumb}" alt="상품1">
-                            <div class="box-info">
-                                <span class="pd_nm">${a.prName}</span>
-                                <span class="pd_price"><fmt:formatNumber value="${a.prPrice}" pattern="#,###"/>원</span>
-                            </div>
-                        </a>
-                    </li>
+                    <c:forEach var="a" items="${articles}">
+                        <li class="product">
+                            <a href="/product/info?prCode=${a.prCode}">
+                                <img src="/product/list/${a.prThumb}" alt="상품1">
+                                <div class="box-info">
+                                    <span class="pd_nm">${a.prName}</span>
+                                    <span class="pd_price">
+                                        <fmt:formatNumber value="${a.prPrice}" pattern="#,###" />원</span>
+                                </div>
+                            </a>
+                        </li>
                     </c:forEach>
-                   <!--  <li class="product">
+                    <!--  <li class="product">
                         <a href="/product/info?prCode=${a.prCode}">
                             <img src="/product/list/${a.prThumb}" alt="상품2">
                             <div class="box-info">
@@ -398,34 +348,37 @@
 
 
         <!-- section login popUp container -->
-        <section id="login-popup-container" class="hide__">
+        <section id="login-popup-container">
             <div class="login-popup-box">
                 <div class="login-join-box">
+                    <div>
+                        <i class="fas fa-times" onclick="javascript:noneDisplay()"></i>
+                    </div>
                     <div class="login-text">
                         <p>로그인</p>
                     </div>
                     <form class="idpw-input" action="/customer/login" method="post" autocomplete="off" id="loginForm">
                         <input type="text" name="csId" placeholder="아이디" id="inputId" class="id-pw">
                         <input type="password" name="csPw" placeholder="비밀번호" id="inputPw" class="id-pw">
-                    
-                    <div class="login-id-remember">
-                        <input type="checkbox" checked name="id-remember" class="id-rem">
-                        <p>아이디 저장</p>
-                    </div>
-                    <div class="login-submit-btn"> 
-                        <input type="button" value="로그인" id="loginBtn" class="login-btn">
-                    </div>
-                    <div class="mem-search-join">
-                        <a href="#">아이디/비밀번호 찾기</a>
-                        <a href="#">회원가입</a>
-                    </div>
 
-                    <div class="sns-join">
-                        <button class="login-btn">카카오로 시작하기</button>
-                        <button class="login-btn">네이버로 시작하기</button>
-                        <button class="login-btn">트위터로 시작하기</button>
-                        <button class="login-btn">페이스북으로 시작하기</button>
-                    </div>
+                        <div class="login-id-remember">
+                            <input type="checkbox" checked name="id-remember" class="id-rem">
+                            <p>아이디 저장</p>
+                        </div>
+                        <div class="login-submit-btn">
+                            <input type="button" value="로그인" id="loginBtn" class="login-btn">
+                        </div>
+                        <div class="mem-search-join">
+                            <a href="#">아이디/비밀번호 찾기</a>
+                            <a href="#">회원가입</a>
+                        </div>
+
+                        <div class="sns-join">
+                            <button class="login-btn">카카오로 시작하기</button>
+                            <button class="login-btn">네이버로 시작하기</button>
+                            <button class="login-btn">트위터로 시작하기</button>
+                            <button class="login-btn">페이스북으로 시작하기</button>
+                        </div>
                 </div>
                 </form>
             </div>
@@ -456,33 +409,24 @@
         <!--  //modal -->
 
         <!-- footer -->
-        <footer>
-            <div id="site-map">
-                <div>
-                    <span>회사 소개</span>
-                    <span>이용약관</span>
-                    <span>개인정보 처리방침</span>
-                    <span>공지사항</span>
-                    <span>고객센터</span>
-                </div>
-            </div>
-            <div id="copyright">
-                <div>Copyright ⓒ2022 All rights reserved │ </div>
-            </div>
-            <p class="goTop">
-                ▲ <br> TOP
-            </p>
-        </footer>
+        <%@ include file="../include/footer.jsp" %>
         <!-- //footer -->
     </div>
 
 
     <script>
-
+        // 로그인 창 열기
         function doDisplay() {
-                document.getElementById("login-popup-container").style.display = "block";
-                document.querySelector(".login-popup-box").style.display = "block";
+            document.getElementById("login-popup-container").style.display = "block";
+            document.querySelector(".login-popup-box").style.display = "block";
         }
+
+        // 로그인 창 닫기
+        function noneDisplay() {
+            document.getElementById("login-popup-container").style.display = "none";
+            document.querySelector(".login-popup-box").style.display = "none";
+        }
+
 
 
         //enter 누를 때 이벤트
@@ -490,26 +434,28 @@
               if (event.keyCode === 13) {
              event.preventDefault();
              if( $('#inputId').val() === '' || $('#inputId').val() === null ) {
+
                     //$("#inputId").attr("placeholder", "아이디를 입력하세요");
-                      //$("#inputId").css("background", "#00B261");
+                    //$("#inputId").css("background", "#00B261");
                     alert("아이디를 입력하세요");
                 }
             }
         });
 
 
-        $('input[type="password"]').keydown(function() {
-              if (event.keyCode === 13) {
-             event.preventDefault();
-             if( $('#inputPw').val() === '' || $('#inputPw').val() === null ) {
+        $('input[type="password"]').keydown(function () {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                if ($('#inputPw').val() === '' || $('#inputPw').val() === null) {
                     //$("#inputPw").attr("placeholder", "비밀번호를 입력하세요");
-                   // $("#inputPw").css("background", "#00B261");
-                   alert("비밀번호를 입력하세요");
+                    // $("#inputPw").css("background", "#00B261");
+                    alert("비밀번호를 입력하세요");
                 } else {
                     $("#loginForm").submit();
                 }
             }
         });
+
 
 
         //로그인 클릭 
@@ -534,10 +480,6 @@
             }
         }
       
-
-        
-
-
     </script>
 
 </body>
