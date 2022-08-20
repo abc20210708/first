@@ -68,7 +68,7 @@
 
                             <td>
                                 <p>${product[status.index].prName}</p>
-                                <p>색상: 메이플</p>
+                                <p>색상: <span>${product[status.index].prColor}</span></p>
                             </td>
 
                             <td>
@@ -254,10 +254,9 @@
                 
 
                 let color = obj.parentElement.nextElementSibling.nextElementSibling.
-                firstElementChild.nextElementSibling.
-                lastElementChild.textContent;
+                firstElementChild.nextElementSibling.nextElementSibling;
 
-                let size = obj.parentElement.nextElementSibling.nextElementSibling.
+                /*let size = obj.parentElement.nextElementSibling.nextElementSibling.
                 firstElementChild.nextElementSibling.nextElementSibling.
                 lastElementChild.textContent;
 
@@ -267,13 +266,13 @@
                 nextElementSibling.nextElementSibling.value;
                 
                 let name =  obj.parentElement.nextElementSibling.nextElementSibling.
-                firstElementChild.textContent;
+                firstElementChild.textContent;*/
 
                 let cartCode = obj.value; //장바구니 코드 변수 생성
                 console.log("color : "+color);
-                console.log("size : "+size);
-                console.log("amount : "+amount);
-                console.log("name : "+name);
+               // console.log("size : "+size);
+               // console.log("amount : "+amount);
+               // console.log("name : "+name);
 
                 if(!codeArr.includes(cartCode)) { //장바구니 코드가 중복되지 않으면 각 배열에 추가
                     codeArr.push(cartCode);
