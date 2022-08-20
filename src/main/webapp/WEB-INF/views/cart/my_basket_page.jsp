@@ -133,8 +133,7 @@
 
                             <td>
                                 <input type="checkbox" value="${c.cartCode}" name="cartChecked"
-                                    onclick="calcGoodsPrice('${product[status.index].prPrice}', this, '${c.cartAmount}')"
-                                    id="input_check">
+                                    onclick="calcGoodsPrice('${product[status.index].prPrice}', this, '${c.cartAmount}')" id="input_check">
                             </td>
                             <td class="basket-pd-img">
                                 <img src="/product/list/${product[status.index].prThumb}" alt="상품 이미지">
@@ -275,65 +274,6 @@
                 </div> 
             </div>
 
-            <!-- <div> -->
-            <!-- <table class="basket-total-box">
-                <tbody class="basket-total">
-                    <tr>
-                        <th>
-                            상품금액
-                        </th>
-                        <td>
-                            <span class="pr_Price">0</span>
-                            <span>원</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            배송비
-                        </th>
-                        <td>
-                            <span class="delivery">0</span>
-                            <span>원</span>
-                        </td>
-                    </tr>
-                    <tr class="bk-total">
-                        <th>
-                            결제예정금액
-                        </th>
-                        <td>
-                            <span class="orderPrice">0</span>
-                            <span>원</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table> -->
-            <!-- <div class="bk-btn-box">
-                <form action="/order/add" method="post">
-                    <c:forEach var="c" items="${cart}">
-                    
-                        <input type="hidden" name="cartCode" value="" id="hiddenCartCode" >  
-                        <input type="hidden" name="orderAmount" value="" id="hiddenOrderAmount">  
-                        <input type="hidden" name="prName" value="" id="hiddenPrName">  
-                        <input type="hidden" name="prColor" value="" id="hiddenPrColor">  
-                        <input type="hidden" name="prSize" value="" id="hiddenPrSize">  
-                        <input type="hidden" name="orderTotalPrice" value="">  
-                        <input type="hidden" name="deliPrice" value="">  
-                    </c:forEach>
-
-                        <input type="hidden" name="csId" value="${loginCustomer.csId}"> 
-                        <input type="hidden" name="csName" value="${loginCustomer.csName}"> 
-                        <input type="hidden" name="csPhone" value="${loginCustomer.csPhone}"> 
-                        <input type="hidden" name="postCode" value="${loginCustomer.postCode}"> 
-                        <input type="hidden" name="roadAddr" value="${loginCustomer.roadAddr}"> 
-                        <input type="hidden" name="lotNumAddr" value="${loginCustomer.lotNumAddr}"> 
-                        <input type="hidden" name="extraAddr" value="${loginCustomer.extraAddr}"> 
-
-
-                    <button type="button" id="allOrder" class="bk-btn">전체주문</button> 
-                    <button type="submit" id="checkOrder" class="bk-btn">선택주문</button>
-                </form>
-
-            </div> -->
         </section>
         <!-- //section content > basket total -->
 
@@ -407,6 +347,8 @@
             if (obj.checked == true) {
                 $('#hiddenCartCode').attr('value', obj.value);
 
+                
+
                 let color = obj.parentElement.nextElementSibling.nextElementSibling.firstElementChild.
                 nextElementSibling.lastElementChild.textContent;
 
@@ -420,6 +362,10 @@
                 firstElementChild.textContent;
 
                 let cartCode = obj.value; //장바구니 코드 변수 생성
+                console.log("color : "+color);
+                console.log("size : "+size);
+                console.log("amount : "+amount);
+                console.log("name : "+name);
 
                 if(!codeArr.includes(cartCode)) { //장바구니 코드가 중복되지 않으면 각 배열에 추가
                     codeArr.push(cartCode);
