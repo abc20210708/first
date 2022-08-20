@@ -253,14 +253,18 @@
 
                 
 
-                let color = obj.parentElement.nextElementSibling.nextElementSibling.firstElementChild.
-                nextElementSibling.lastElementChild.textContent;
+                let color = obj.parentElement.nextElementSibling.nextElementSibling.
+                firstElementChild.nextElementSibling.
+                lastElementChild.textContent;
 
-                let size = obj.parentElement.nextElementSibling.nextElementSibling.firstElementChild.
-                nextElementSibling.nextElementSibling.lastElementChild.textContent;
+                let size = obj.parentElement.nextElementSibling.nextElementSibling.
+                firstElementChild.nextElementSibling.nextElementSibling.
+                lastElementChild.textContent;
 
-                let amount = obj.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-                .firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.value;
+                let amount = obj.parentElement.nextElementSibling.nextElementSibling.
+                nextElementSibling.nextElementSibling
+                .firstElementChild.firstElementChild.
+                nextElementSibling.nextElementSibling.value;
                 
                 let name =  obj.parentElement.nextElementSibling.nextElementSibling.
                 firstElementChild.textContent;
