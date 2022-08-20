@@ -104,7 +104,7 @@
                     <c:forEach var="c" items="${cart}" varStatus="status">
 
                         
-                    <tr class="basket-pd-info">
+                    <!-- <tr class="basket-pd-info">
                        
                         <td>
                             <input type="checkbox" value="${c.cartCode}" name="cartChecked" onclick="calcGoodsPrice('${product[status.index].prPrice}', this, '${c.cartAmount}')"  id="input_check">
@@ -125,8 +125,8 @@
                             <span>원</span>
                             
                         </td>
-                        <td>
-                            <form action="/cart/modify" method="post">
+                        <td> -->
+                           
 
 
                         <tr class="basket-pd-info">
@@ -197,6 +197,7 @@
                     </tr> -->
                 </tbody>
             </table>
+            
             <div class="basket-sum">
             </div>
         </section>
@@ -245,14 +246,37 @@
                         </tr>
                     </tbody>
                 </table>
+                
                 <div class="bk-btn-box">
-                    <button type="submit" class="bk-btn">전체주문</button>
-                    <button type="submit" class="bk-btn">선택주문</button>
-                </div>
+                    <form action="/order/add" method="post">
+                        <c:forEach var="c" items="${cart}">
+                        
+                            <input type="hidden" name="cartCode" value="" id="hiddenCartCode" >  
+                            <input type="hidden" name="orderAmount" value="" id="hiddenOrderAmount">  
+                            <input type="hidden" name="prName" value="" id="hiddenPrName">  
+                            <input type="hidden" name="prColor" value="" id="hiddenPrColor">  
+                            <input type="hidden" name="prSize" value="" id="hiddenPrSize">  
+                            <input type="hidden" name="orderTotalPrice" value="">  
+                            <input type="hidden" name="deliPrice" value="">  
+                        </c:forEach>
+    
+                            <input type="hidden" name="csId" value="${loginCustomer.csId}"> 
+                            <input type="hidden" name="csName" value="${loginCustomer.csName}"> 
+                            <input type="hidden" name="csPhone" value="${loginCustomer.csPhone}"> 
+                            <input type="hidden" name="postCode" value="${loginCustomer.postCode}"> 
+                            <input type="hidden" name="roadAddr" value="${loginCustomer.roadAddr}"> 
+                            <input type="hidden" name="lotNumAddr" value="${loginCustomer.lotNumAddr}"> 
+                            <input type="hidden" name="extraAddr" value="${loginCustomer.extraAddr}"> 
+    
+    
+                        <button type="button" id="allOrder" class="bk-btn">전체주문</button> 
+                        <button type="submit" id="checkOrder" class="bk-btn">선택주문</button>
+                    </form>
+                </div> 
+            </div>
 
-
-            <div>
-            <table class="basket-total-box">
+            <!-- <div> -->
+            <!-- <table class="basket-total-box">
                 <tbody class="basket-total">
                     <tr>
                         <th>
@@ -282,8 +306,8 @@
                         </td>
                     </tr>
                 </tbody>
-            </table>
-            <div class="bk-btn-box">
+            </table> -->
+            <!-- <div class="bk-btn-box">
                 <form action="/order/add" method="post">
                     <c:forEach var="c" items="${cart}">
                     
@@ -309,7 +333,7 @@
                     <button type="submit" id="checkOrder" class="bk-btn">선택주문</button>
                 </form>
 
-            </div>
+            </div> -->
         </section>
         <!-- //section content > basket total -->
 

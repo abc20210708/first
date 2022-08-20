@@ -28,12 +28,14 @@
                             </label>
                         </form>
                     </a>
+                    <c:if test="${loginCustomer == null}">
                     <a href="#" class="sign-in-up" id="singUpBtn" onclick="javascript:doDisplay()">
                         <span>로그인</span>
                     </a>
                     <a href="/customer/account" class="sign-in-up">
                         <span>회원가입</span>
                     </a>
+                    </c:if>
                     <a href="#"><i class="far fa-heart"></i></a>
                     <a href="/cart/list"><i class="fas fa-cart-plus"></i></a>
                     </ul>
