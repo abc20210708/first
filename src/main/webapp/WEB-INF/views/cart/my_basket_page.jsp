@@ -15,55 +15,7 @@
 
         <!-- header -->
         <%@ include file="../include/header.jsp" %>
-                <!-- 
-                    <section class="search">
-                    <form action="/board/list" method="get">
-                    <select id="search-type" class="form-select" name="type">
-                        <option value="title">제목</option>
-                        <option value="content">내용</option>
-                        <option value="writer">작성자</option>
-                        <option value="titleContent">제목+내용</option>
-                    </select>
-
-                    <input class="form-control" type="text" name="keyword" value="${pageInfo.page.keyword}">
-
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-            </section>
-
-
-
-            //장바구니 검색 참고
-            <form name="form1" method="post" action="list.do">
-            
-                <select name="search_option">
-                    <option value="user_id"
-            <c:if test="${map.search_option == 'user_id'}">selected</c:if>
-            >작성자</option>
-            
-                    <option value="title" 
-            <c:if test="${map.search_option == 'title'}">selected</c:if>
-                    >제목</option>
-            
-                    <option value="content" 
-            <c:if test="${map.search_option == 'content'}">selected</c:if>
-                    >내용</option>
-            
-                    <option value="all" 
-            <c:if test="${map.search_option == 'all'}">selected</c:if>
-                    >작성자+내용+제목</option>
-            
-                </select>
-                <input name="keyword" value="${map.keyword}">
-                <input type="submit" value="조회">
-            </form>
-
-            //참고 블로그
-            https://dlgkstjq623.tistory.com/354
-            -->
-
+  
         <!-- //header -->
 
         <!-- section content > page banner -->
@@ -102,32 +54,6 @@
             <table class="basket-list"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
                 <tbody class="basket-list-pd">
                     <c:forEach var="c" items="${cart}" varStatus="status">
-
-                        
-                    <!-- <tr class="basket-pd-info">
-                       
-                        <td>
-                            <input type="checkbox" value="${c.cartCode}" name="cartChecked" onclick="calcGoodsPrice('${product[status.index].prPrice}', this, '${c.cartAmount}')"  id="input_check">
-                        </td>
-                        <td class="basket-pd-img">
-                            <img src="/product/list/${product[status.index].prThumb}" alt="상품 이미지">
-                        </td>
-                        
-                        
-                        <td>
-                            <p>${product[status.index].prName}</p>
-                            <p><span>색상:</span> <span>${c.prColor}</span></p>
-                            <p><span>사이즈:</span> <span>${c.prSize}</span></p>
-                        </td>
-                       
-                        <td>
-                            <span id="prPrice"><fmt:formatNumber value="${product[status.index].prPrice}" pattern="#,###"/></span>
-                            <span>원</span>
-                            
-                        </td>
-                        <td> -->
-                           
-
 
                         <tr class="basket-pd-info">
 
@@ -171,29 +97,7 @@
                         </tr>
                     </c:forEach>
 
-                    <!--
-                    <tr class="basket-pd-info">
-                        <td>
-                            <input type="checkbox" name="basket" checked>
-                        </td>
-                        <td class="basket-pd-img">
-                            <img src="./image/dishes3.png" alt="상품 이미지">
-                        </td>
-                        <td>
-                            <p>도트무늬 공기</p>
-                            <p>색상: 블루 도트</p>
-                        </td>
-                        <td>
-                            <p>10,000원</p>
-                        </td>
-                        <td>
-                            <input type="number" name="basket" value="1">
-                            <button type="submit">변경</button>
-                        </td>
-                        <td>
-                            <i class="fas fa-times"></i>
-                        </td>
-                    </tr> -->
+            
                 </tbody>
             </table>
             
