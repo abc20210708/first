@@ -262,7 +262,7 @@
                 lastElementChild.textContent;
 
                 let amount = obj.parentElement.nextElementSibling.nextElementSibling.
-                nextElementSibling.firstElementChild.nextElementSibling.textContent;
+                nextElementSibling.firstElementChild.textContent.trim();
 
                 let name =  obj.parentElement.nextElementSibling.nextElementSibling.
                 firstElementChild.textContent;
