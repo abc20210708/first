@@ -68,7 +68,8 @@
 
                             <td>
                                 <p>${product[status.index].prName}</p>
-                                <p>색상: <span>${product[status.index].prColor}</span></p>
+                                <p>색상: <span>${c.prColor}</span></p>
+                                <p>사이즈: <span>${c.prSize}</span></p>
                             </td>
 
                             <td>
@@ -254,25 +255,23 @@
                 
 
                 let color = obj.parentElement.nextElementSibling.nextElementSibling.
-                firstElementChild.nextElementSibling.nextElementSibling;
+                firstElementChild.nextElementSibling.lastElementChild.textContent;
 
-                /*let size = obj.parentElement.nextElementSibling.nextElementSibling.
+                let size = obj.parentElement.nextElementSibling.nextElementSibling.
                 firstElementChild.nextElementSibling.nextElementSibling.
                 lastElementChild.textContent;
 
                 let amount = obj.parentElement.nextElementSibling.nextElementSibling.
-                nextElementSibling.nextElementSibling
-                .firstElementChild.firstElementChild.
-                nextElementSibling.nextElementSibling.value;
-                
+                nextElementSibling.firstElementChild.nextElementSibling.textContent;
+
                 let name =  obj.parentElement.nextElementSibling.nextElementSibling.
-                firstElementChild.textContent;*/
+                firstElementChild.textContent;
 
                 let cartCode = obj.value; //장바구니 코드 변수 생성
                 console.log("color : "+color);
-               // console.log("size : "+size);
-               // console.log("amount : "+amount);
-               // console.log("name : "+name);
+                console.log("size : "+size);
+                console.log("amount : "+amount);
+                console.log("name : "+name);
 
                 if(!codeArr.includes(cartCode)) { //장바구니 코드가 중복되지 않으면 각 배열에 추가
                     codeArr.push(cartCode);

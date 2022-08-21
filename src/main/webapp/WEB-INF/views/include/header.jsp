@@ -37,7 +37,7 @@
                     </a>
                     </c:if>
                     <a href="#"><i class="far fa-heart"></i></a>
-                    <a href="/cart/list"><i class="fas fa-cart-plus"></i></a>
+                    <a href="#" onclick="cartList('${loginCustomer}')"><i class="fas fa-cart-plus"></i></a>
                     </ul>
                 </nav>
             </div>
@@ -49,4 +49,12 @@
 			var $nav = $("#header-container");
 			$nav.toggleClass('scroll', $(this).scrollTop() > $nav.height());
 		});
+
+            function cartList(target) {
+                if(target) {
+                    location.href = "/cart/list";
+                } else {
+                    alert("로그인 후 이용해주세요 :)");
+                }
+            }
         </script>
