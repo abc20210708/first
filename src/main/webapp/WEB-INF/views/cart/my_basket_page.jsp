@@ -221,7 +221,7 @@
                 $(".delivery").text("+" + dv.toString());
             } else {
                 dv = 3000;
-                $(".delivery").text("+" + dv.toString());
+                $(".delivery").text("+" + dv.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
             }
 
         }
