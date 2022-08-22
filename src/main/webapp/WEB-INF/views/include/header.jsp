@@ -6,7 +6,7 @@
         <header id="header-container">
             <div class="inner-header">
                 <h1 class="logo">
-                    <a href="#">
+                    <a href="/">
                         <img src="/image/Title_ex.png" alt="메인 로고 이미지">
                     </a>
                 </h1>

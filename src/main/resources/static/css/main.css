@@ -1123,8 +1123,10 @@ footer .goTop {
 /* 상품 결제금액 합산 스타일 */
 #basket-total-container {
     width: 70%;
-    margin: 0 auto 1rem;
-    position: relative;
+    margin: 0 auto 1rem; 
+    position: relative; 
+    display: flex;
+    
 }
 
 /* 상품 결제금액 합산/주문버튼 부분 */
@@ -1134,10 +1136,12 @@ footer .goTop {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     border-radius: 5px;
-   /* float: right; */
-    margin-bottom: 5rem;
+     /* margin-bottom: 5rem; */
     padding: 0 20px;
+    margin: auto 0 5rem auto;
 }
+
+
 
 #basket-total-container .basket-total-box {
     width: 100%;
