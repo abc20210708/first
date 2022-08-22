@@ -388,6 +388,7 @@ section .products-list .product {
 
 section .products-list .product a img {
     width: 100%;
+    height: 200px;
 }
 
 section .products-list .product a .box-info {
@@ -427,6 +428,7 @@ section#labels ul li {
 
 }
 
+
 /* footer와의 간격 */
 section#labels ul li:last-child {
     margin-bottom: 10vw;
@@ -436,6 +438,7 @@ section#labels ul li:last-child {
 section#labels ul li img {
     width: 100%;
     max-width: 150px;
+ 
     /* 150px 이상으로 커지지 않도록 함 */
 }
 
