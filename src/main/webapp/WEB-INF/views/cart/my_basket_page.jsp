@@ -110,7 +110,7 @@
         <!-- section content > basket empty -->
         <div class="basket-empty"> <!-- 장바구니에 하나라도 담겨있을 시 hide클래스 추가 -->
             <p>장바구니에 담은 상품이 없습니다.</p>
-            <button>상품 담으러 가기</button>
+            <button onclick="location.href='/'">상품 담으러 가기</button>
         </div>
         <!-- //section content > basket empty -->
         
