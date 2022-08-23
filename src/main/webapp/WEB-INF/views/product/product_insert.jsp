@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ prefix="fn" taglib uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -32,7 +33,7 @@
             # 카테고리 번호  : <input type="text" name="cateCode">
            
             <br>
-            1 - tableware, 2 - 프라이팬, 3 - 컵, 4 - 접시
+            1 - tableware, 2 - 프라이팬, 3 - 컵, 4 - 접시, 5- 수저
 
         </label>
         
@@ -117,7 +118,9 @@
         <p>
             <label>
                 <c:if test="${!empty list.prColor}"> 
-                    <input type="checkbox" name="prColor" value="${list.prColor}" > ${list.prColor}
+                    <c:if test="{list != list.prColor}">
+                        <input type="checkbox" name="prColor" value="${list.prColor}" > ${list.prColor}
+                    </c:if>
                 </c:if>
             </label>
             
