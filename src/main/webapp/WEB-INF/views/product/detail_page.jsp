@@ -40,16 +40,16 @@
                         </div>
                         <ul class="add-img">
                             <li>
-                                <img src="/product/list/${p.prThumb}"  class="d-image" alt="상품 부가 이미지">
+                                <img src="/product/list/${p.prThumb}"  class="d-image" alt="">
                             </li>
                             <li>
-                                <img src="/product/list/${p.prImg1}"  class="d-image" alt="상품 부가 이미지">
+                                <img src="/product/list/${p.prImg1}"  class="d-image" alt="">
                             </li>
                             <li>
-                                <img src="/product/list/${p.prImg2}"  class="d-image" alt="상품 부가 이미지">
+                                <img src="/product/list/${p.prImg2}"  class="d-image" alt="">
                             </li>
                             <li>
-                                <img src="/product/list/${p.prImg3}"  class="d-image" alt="상품 부가 이미지">
+                                <img src="/product/list/${p.prImg3}"  class="d-image" alt="">
                             </li>
                         </ul>
                     </div>
@@ -199,7 +199,7 @@
                         <tbody>
                             <tr>
                                 <th>품명</th>
-                                <td>카페 유리컵</td>
+                                <td>${p.prName}</td>
                             </tr>
                             <tr>
                                 <th>재질</th>
