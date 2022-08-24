@@ -64,8 +64,12 @@
         ,product_color,product_size)
         VALUES
         (seq_product_code.nextval, #{cateCode} , #{prName}, #{prPrice},
-        #{prYn}, #{prAmount}, #{prThumb}, #{prImg1}, #{prImg2}, #{prImg3},
-        #{prImg4}, #{prImg5}, #{prColor}, #{prSize})
+        #{prYn}, #{prAmount}, #{prThumb}, #{prImg1},
+        (SELECT NVL(prImg2),0) FROM product),
+        (SELECT NVL(prImg3),0) FROM product),
+        (SELECT NVL(prImg4),0) FROM product),
+        (SELECT NVL(prImg5),0) FROM product),
+        #{prColor}, #{prSize})
     </insert>
 
 

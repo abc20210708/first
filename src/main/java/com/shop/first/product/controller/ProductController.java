@@ -84,7 +84,9 @@ public class ProductController extends HttpServlet {
 
         for (int i = 0; i < files.length; i++) {
             fileOriginName = files[i].getOriginalFilename();
+
             log.info("기존 파일명: "+ fileOriginName);
+
             SimpleDateFormat formatter = new SimpleDateFormat("YYYYMMDD_HHMMSS_"+i);
             Calendar now = Calendar.getInstance();
 
@@ -102,22 +104,28 @@ public class ProductController extends HttpServlet {
             fileMultiName += fileOriginName;
 
 
-
-            if (i==0) {
+            if (i == 0) {
                 product.setPrThumb(fileMultiName);
-            } else if (i == 1 ) {
+                log.info("setPrThumb: " + i + fileOriginName);
+            } else if (i == 1) {
                 product.setPrImg1(fileMultiName);
-            } else if (i == 2 ) {
+                log.info("setPrImg1: " + i + fileOriginName);
+            } else if (i == 2) {
                 product.setPrImg2(fileMultiName);
-            } else if (i == 3 ) {
+                log.info("setPrImg2: " + i + fileOriginName);
+            } else if (i == 3) {
                 product.setPrImg3(fileMultiName);
-            }  else if (i == 4 ) {
+                log.info("setPrImg3: " + i + fileOriginName);
+            } else if (i == 4) {
                 product.setPrImg4(fileMultiName);
-            }  else if (i == 5 ) {
+                log.info("setPrImg4: " + i + fileOriginName);
+            } else if (i == 5) {
                 product.setPrImg5(fileMultiName);
+                log.info("setPrImg5: " + i + fileOriginName);
             } else {
-                fileMultiName += ","+fileOriginName;
+                fileMultiName += "," + fileOriginName;
             }
+
 
             log.info("*"+fileMultiName);
         }
