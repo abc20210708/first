@@ -1,7 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ prefix="fn" taglib uri="http://java.sun.com/jsp/jstl/functions" %>
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -118,9 +117,7 @@
         <p>
             <label>
                 <c:if test="${!empty list.prColor}"> 
-                    <c:if test="{list != list.prColor}">
-                        <input type="checkbox" name="prColor" value="${list.prColor}" > ${list.prColor}
-                    </c:if>
+                        <input type="checkbox" name="prColor" value="${list.prColor}" > ${list.prColor} 
                 </c:if>
             </label>
             

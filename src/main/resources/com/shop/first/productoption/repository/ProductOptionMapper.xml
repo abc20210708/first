@@ -21,7 +21,7 @@
 
     <!--    //옵션 조회  -->
     <select id="getArticles" resultMap="optionMap">
-        SELECT * FROM product_option
+        SELECT DISTINCT product_color,product_size FROM product_option
     </select>
 
 
