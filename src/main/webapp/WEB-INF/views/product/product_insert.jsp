@@ -32,7 +32,7 @@
             # 카테고리 번호  : <input type="text" name="cateCode">
            
             <br>
-            1 - tableware, 2 - 프라이팬, 3 - 컵, 4 - 접시, 5- 수저
+            1 - tableware, 2 - 프라이팬, 3 - 컵, 4 - 접시, 41- 수저
 
         </label>
         
@@ -122,18 +122,21 @@
             </label>
             
         </p>
-    
-        
-        <p>
+
+    </c:forEach>
+
+
+    <c:forEach var="list" items="${list}"> 
+
+     <p>
             <label>
                 <c:if test="${!empty list.prSize}"> 
                     <input type="checkbox" name="prSize" value="${list.prSize}" > ${list.prSize}
                 </c:if>
             </label>
         </p>  
-
+    
     </c:forEach>
-  
 
     <p>
         <label>

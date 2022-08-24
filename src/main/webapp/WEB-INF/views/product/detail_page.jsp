@@ -40,16 +40,16 @@
                         </div>
                         <ul class="add-img">
                             <li>
-                                <img src="/product/list/${p.prThumb}"  class="d-image" alt="">
+                                <img src="/product/list/${p.prThumb}"  class="d-image">
                             </li>
                             <li>
-                                <img src="/product/list/${p.prImg1}"  class="d-image" alt="">
+                                <img src="/product/list/${p.prImg1}"  class="d-image">
                             </li>
                             <li>
-                                <img src="/product/list/${p.prImg2}"  class="d-image" alt="">
+                                <img src="/product/list/${p.prImg2}"  class="d-image">
                             </li>
                             <li>
-                                <img src="/product/list/${p.prImg3}"  class="d-image" alt="">
+                                <img src="/product/list/${p.prImg3}"  class="d-image">
                             </li>
                         </ul>
                     </div>
@@ -416,13 +416,22 @@
 
 
         //상품 이미지 클릭시 함수
-        $(".d-image").click(function(){
-            let imgSrc = $(this).attr("src");
-            console.log(imgSrc);
-            $(".m-img").attr("src", imgSrc); //메인 이미지 img src 변경
-            /*참고 블로그 https://solbel.tistory.com/1070 */
-            });
+        // $(".d-image").click(function(){
+        //     let imgSrc = $(this).attr("src");
+        //     console.log(imgSrc);
+        //     $(".m-img").attr("src", imgSrc); //메인 이미지 img src 변경
+        //     /*참고 블로그 https://solbel.tistory.com/1070 */
+        //     });
 
+        //hover 이미지 변경 
+        $(".d-image").mouseover(function() {
+            $(".m-img").attr("src", $(this).attr("src").replace("Before","After"));});
+            
+        $(".d-image").mouseout(function() {
+            $(".m-img").attr("src", $(this).attr("src").replace("After", "Before"));});
+
+
+        //  참고 블로그 sweetdolphin.tistory.com/entry/마우스-오버-이미지-변경-jQuery-replace [코딩하는돌고래:티스토리]
 
     </script>
 

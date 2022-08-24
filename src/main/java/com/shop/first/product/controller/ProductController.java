@@ -99,8 +99,10 @@ public class ProductController extends HttpServlet {
             File f = new File(uploadPath+ "\\"+fileOriginName);
             files[i].transferTo(f);
 
-
             fileMultiName += fileOriginName;
+
+
+
             if (i==0) {
                 product.setPrThumb(fileMultiName);
             } else if (i == 1 ) {
@@ -113,8 +115,10 @@ public class ProductController extends HttpServlet {
                 product.setPrImg4(fileMultiName);
             }  else if (i == 5 ) {
                 product.setPrImg5(fileMultiName);
+            } else {
+                fileMultiName += ","+fileOriginName;
             }
-            else {fileMultiName += ","+fileOriginName;}
+
             log.info("*"+fileMultiName);
         }
 
