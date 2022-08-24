@@ -85,6 +85,7 @@ public class ProductController extends HttpServlet {
         for (int i = 0; i < files.length; i++) {
             fileOriginName = files[i].getOriginalFilename();
 
+
             log.info("기존 파일명: "+ fileOriginName);
 
             SimpleDateFormat formatter = new SimpleDateFormat("YYYYMMDD_HHMMSS_"+i);
@@ -104,24 +105,38 @@ public class ProductController extends HttpServlet {
             fileMultiName += fileOriginName;
 
 
+
+
             if (i == 0) {
                 product.setPrThumb(fileMultiName);
-                log.info("setPrThumb: " + i + fileOriginName);
+                log.info("setPrThumb: " + i + fileMultiName);
             } else if (i == 1) {
                 product.setPrImg1(fileMultiName);
-                log.info("setPrImg1: " + i + fileOriginName);
+                log.info("setPrImg1: " + i + fileMultiName);
             } else if (i == 2) {
-                product.setPrImg2(fileMultiName);
-                log.info("setPrImg2: " + i + fileOriginName);
+                if(fileOriginName.trim().isEmpty()) product.setPrImg2(null);
+                else {
+                    product.setPrImg2(fileMultiName);
+                }
+                log.info("setPrImg2: " + i + fileMultiName);
             } else if (i == 3) {
-                product.setPrImg3(fileMultiName);
-                log.info("setPrImg3: " + i + fileOriginName);
+                if(fileOriginName.trim().isEmpty()) product.setPrImg3(null);
+                else {
+                    product.setPrImg3(fileMultiName);
+                }
+                log.info("setPrImg2: " + i + fileMultiName);
             } else if (i == 4) {
-                product.setPrImg4(fileMultiName);
-                log.info("setPrImg4: " + i + fileOriginName);
+                if(fileOriginName.trim().isEmpty()) product.setPrImg4(null);
+                else {
+                    product.setPrImg4(fileMultiName);
+                }
+                log.info("setPrImg2: " + i + fileMultiName);
             } else if (i == 5) {
-                product.setPrImg5(fileMultiName);
-                log.info("setPrImg5: " + i + fileOriginName);
+                if(fileOriginName.trim().isEmpty()) product.setPrImg5(null);
+                else {
+                    product.setPrImg5(fileMultiName);
+                }
+                log.info("setPrImg2: " + i + fileMultiName);
             } else {
                 fileMultiName += "," + fileOriginName;
             }
