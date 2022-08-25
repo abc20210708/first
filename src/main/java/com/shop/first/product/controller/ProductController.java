@@ -85,7 +85,7 @@ public class ProductController extends HttpServlet {
         for (int i = 0; i < files.length; i++) {
             fileOriginName = files[i].getOriginalFilename();
 
-            if (fileOriginName.equals("")) fileOriginName = "0";
+
 
             log.info("기존 파일명: "+ fileOriginName);
 
@@ -96,17 +96,17 @@ public class ProductController extends HttpServlet {
             //확장자명
             String extension = fileOriginName.split("\\.")[1];
 
-            //
+
             fileOriginName = formatter.format(now.getTime())+"."+extension;
+
+
             log.info("변경된 파일명 :" +fileOriginName);
 
             File f = new File(uploadPath+ "\\"+fileOriginName);
             files[i].transferTo(f);
 
-
             fileMultiName += fileOriginName;
-
-
+            
             if (i == 0) {
                 product.setPrThumb(fileMultiName);
                 log.info("setPrThumb: " + i + fileMultiName);
