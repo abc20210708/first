@@ -106,7 +106,7 @@ public class ProductController extends HttpServlet {
             files[i].transferTo(f);
 
             fileMultiName += fileOriginName;
-            
+
             if (i == 0) {
                 product.setPrThumb(fileMultiName);
                 log.info("setPrThumb: " + i + fileMultiName);
