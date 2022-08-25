@@ -48,6 +48,25 @@ public class ProductController extends HttpServlet {
         List<Product> productList = productService.getList();
         model.addAttribute("articles", productList);
 
+        List<Product> randomList = null;
+
+        int[] prCodeArr = new int[productList.size()];
+
+        //prCode담을 배열 생성하기
+        //배열에 prCode 담기
+        //배열에서 요소 무작위 선택
+        //참고 블로그 http://daplus.net/java-%EB%B0%B0%EC%97%B4%EC%97%90%EC%84%9C-%EC%9A%94%EC%86%8C%EB%A5%BC-%EB%AC%B4%EC%9E%91%EC%9C%84%EB%A1%9C-%EC%84%A0%ED%83%9D%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/
+        //새로운 리스트 만들어서 상품(랜덤) 추가하기
+
+        /*
+        for (int i = 0; i < productList.size(); i++) {
+
+        }
+
+        for (int i = 0; i < 4; i++) {
+            randomList.add(productService.get((int)(Math.random() * productList.size() +1)));
+        }*/
+
         return "product/detail_page";
     }
 
