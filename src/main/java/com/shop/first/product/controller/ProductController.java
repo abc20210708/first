@@ -48,9 +48,11 @@ public class ProductController extends HttpServlet {
         List<Product> productList = productService.getList();
         model.addAttribute("articles", productList);
 
-        List<Product> randomList = null;
 
-        int[] prCodeArr = new int[productList.size()];
+
+        //List<Product> randomList = null;
+
+        //int[] prCodeArr = new int[productList.size()];
 
         //prCode담을 배열 생성하기
         //배열에 prCode 담기

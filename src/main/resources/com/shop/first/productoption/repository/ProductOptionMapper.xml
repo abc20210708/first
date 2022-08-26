@@ -15,7 +15,7 @@
 
     <!--    //상품 옵션 조회  -->
     <select id="getOption" resultMap="optionMap">
-        SELECT * FROM product_option
+        SELECT * FROM product
         WHERE product_code = #{prCode}
     </select>
 
