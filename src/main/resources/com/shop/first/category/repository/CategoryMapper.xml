@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shop.first.category.repository.CategoryMapper">
+
+    <resultMap id="customerMap" type="com.shop.first.customer.domain.Customer">
+        <result property="cateCode" column="cate_code" />
+        <result property="categoryName" column="cate_name" />
+        <result property="cateCodeRef" column="cate_code_ref" />
+
+    </resultMap>
+
+
+    <!-- 회원 가입   -->
+    <select id="getCategory">
+        SELECT * FROM category
+    </select>
+
+
+
+</mapper>
