@@ -86,7 +86,7 @@
     </delete>
 
     <!--    //상품 카테고리 조회-->
-    <select id="getCate" resultMap="productMap">
+    <select id="getCate" resultType="String">
         SELECT c.cate_name
         FROM
         product p, category c

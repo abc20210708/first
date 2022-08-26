@@ -27,7 +27,7 @@
                 <p class="category-text">
                     <a href="#">전체</a>
                     &nbsp;&gt;&nbsp;<a href="#">${cate}</a>
-                    &nbsp;&gt;&nbsp;<a href="#">유리컵</a>
+                    <!-- &nbsp;&gt;&nbsp;<a href="#">유리컵</a> -->
                 </p>
 
                 <!-- 해당 상품 이미지/텍스트 상자 -->
