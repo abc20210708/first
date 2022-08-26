@@ -14,6 +14,9 @@ public interface ProductMapper {
     //상품 상세 조회
     Product getContent(int prCode);
 
+    //상품 카테고리명 조회
+    String getCate(int prCode);
+
     //상품 검색
     //List<Product> getProduct(String keyword);
 

@@ -5,15 +5,14 @@
 
 <mapper namespace="com.shop.first.category.repository.CategoryMapper">
 
-    <resultMap id="customerMap" type="com.shop.first.customer.domain.Customer">
+    <resultMap id="categoryMap" type="com.shop.first.category.domain.Category">
         <result property="cateCode" column="cate_code" />
         <result property="categoryName" column="cate_name" />
         <result property="cateCodeRef" column="cate_code_ref" />
-
     </resultMap>
 
 
-    <!-- 회원 가입   -->
+    <!-- 카테고리 조회   -->
     <select id="getCategory">
         SELECT * FROM category
     </select>

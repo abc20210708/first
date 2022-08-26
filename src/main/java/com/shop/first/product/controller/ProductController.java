@@ -51,7 +51,9 @@ public class ProductController extends HttpServlet {
         List<Product> productList = productService.getList();
         model.addAttribute("articles", productList);
 
-
+        String category = productService.getCategory(prCode);
+        log.info("category: "+ category);
+        model.addAttribute("cate", category);
 
         //List<Product> randomList = null;
 

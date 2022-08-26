@@ -23,6 +23,11 @@ public class ProductService {
         return articles;
     }
 
+    //상품 카테고리 조회 중간 처리
+    public String getCategory(int prCode) {
+        return productMapper.getCate(prCode);
+    }
+
     // 상품 검색 중간 처리
     /*
     public List<Product> getProductList(String keyword) {

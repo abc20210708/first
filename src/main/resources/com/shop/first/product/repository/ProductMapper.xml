@@ -23,6 +23,12 @@
         <result property="prSize" column="product_size" />
     </resultMap>
 
+    <resultMap id="categoryMap" type="com.shop.first.category.domain.Category">
+        <result property="cateCode" column="cate_code" />
+        <result property="categoryName" column="cate_name" />
+        <result property="cateCodeRef" column="cate_code_ref" />
+    </resultMap>
+
     <!--    //상품 목록 조회  -->
     <select id="getArticles" resultMap="productMap">
         SELECT * FROM product
@@ -79,6 +85,14 @@
         WHERE product_code = #{prCode}
     </delete>
 
-
-
+    <!--    //상품 카테고리 조회-->
+    <select id="getCate" resultMap="productMap">
+        SELECT c.cate_name
+        FROM
+        product p, category c
+        WHERE
+        p.cate_code = c.cate_code
+        AND
+        p.product_code = #{prCode}
+    </select>
 </mapper>

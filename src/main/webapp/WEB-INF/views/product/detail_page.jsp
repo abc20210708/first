@@ -26,7 +26,7 @@
                 <!-- 카테고리 경로 -->
                 <p class="category-text">
                     <a href="#">전체</a>
-                    &nbsp;&gt;&nbsp;<a href="#">컵</a>
+                    &nbsp;&gt;&nbsp;<a href="#">${cate}</a>
                     &nbsp;&gt;&nbsp;<a href="#">유리컵</a>
                 </p>
 
