@@ -212,6 +212,9 @@
 
             <!-- section content > best product -->
             <!-- 베스트 상품 정렬 (8개 상품 2줄로 노출) -->
+
+            <!-- 베스트 상품 상품수량 적은 순으로 조회하기 -->
+
             <section id="best-products" class="common-style product-list-section">
                 <div class="section-title">Best Products</div>
                 <div class="click-more">
@@ -254,7 +257,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="product">
+                    <!-- <li class="product">
                         <a href="#">
                             <img src="http://via.placeholder.com/230" alt="상품1">
                             <div class="box-info">
@@ -325,7 +328,7 @@
                                 <span class="pd_price">10,000원</span>
                             </div>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </section>
             <!-- //section content > best product -->
