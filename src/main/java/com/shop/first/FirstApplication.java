@@ -27,6 +27,9 @@ public class FirstApplication {
 		SpringApplication.run(FirstApplication.class, args);
 	}
 
+	//오라클 계정 패스워드 만료
+	//참고 블로그 https://daram2-everyday.tistory.com/23
+
 }//
 
 
