@@ -5,115 +5,122 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>주문 내역</title>
-
-  </head>
+<head>
+    <title>The dishes Mall - 장바구니</title>
+    <%@ include file="../include/static-head.jsp" %>
+</head>
 
 <body>
+    <div class="wrap">
 
-<c:forEach var="ord" items="${ord}"> 
-    <h1>${loginCustomer.csName}님의 주문내역</h1>
+        <!-- header -->
+        <%@ include file="../include/header.jsp" %>
+  
+        <!-- //header -->
+
+        <!-- section content > page banner -->
+        <!-- 배너 자리 -->
+        
+    <c:forEach var="ord" items="${ord}">
+        <section id="page-banner-container" class="basket-bn">
+            <div class="page-banner-img">
+                <div class="page-banner-text">
+                    <p>${loginCustomer.csName}님</p>
+                    <p>주문내역</p>
+                </div>
+                <img src="/image/basket.png" alt="카테고리 배너 이미지">
+            </div>
+        </section>
+        <!-- //section content > page banner -->
+
+        
+        <!-- section content > basket list -->
+        <section id="basket-list-container">
    
- 
-    <p>
-        <label>
-            # 주문코드  : <input type="text" value="${ord.orderCode}" readonly>
-        </label>
-    </p>
-        
-    <p>
-        <label>
-            # 주문자명  : <input type="text" value="${loginCustomer.csName}" readonly>
-        </label>
-    </p>
-
-    <p>
-        <label>
-            # 연락처  : <input type="text" value="${ord.csPhone}" readonly>
-        </label>
-    </p>
-
-
-    <p>
-        <label>
-            # 우편번호  : <input type="text" value="${ord.postCode}" readonly>
-        </label>
-    </p>
-
-    <p>
-        <label>
-            # 도로명주소  : <input type="text" value="${loginCustomer.roadAddr}" readonly>
-        </label>
-    </p>
-        
-    
-    <p>
-        <label>
-            # 지번주소  : <input type="text" value="${loginCustomer.lotNumAddr}" readonly>
-        </label>
-    </p>
-
-    <p>
-        <label>
-            # 상세주소  : <input type="text" value="${loginCustomer.extraAddr}" readonly>
-        </label>
-    </p>
-
+            <table class="basket-list"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
+                <tbody class="basket-list-pd">
       
-    <p>
-        <label>
-            # 상품명  : ${ord.prName}
-        </label>
-    </p>
 
-    
-    <p>
-        <label>
-            # 색상  : <input type="text" value="${ord.prColor}" readonly>
-        </label>
-    </p>
+                        <tr class="basket-pd-info">
 
-    <p>
-        <label>
-            # 사이즈  : <input type="text" value="${ord.prSize}" readonly>
-        </label>
-    </p>
+                            <td>
+                                <input type="checkbox" value="${c.cartCode}" name="cartChecked"
+                                    onclick="calcGoodsPrice('${product[status.index].prPrice}', this, '${c.cartAmount}')" id="input_check">
+                            </td>
+               
 
 
-    <p>
-        <label>
-            # 구매수량  : <input type="text" value="${ord.orderAmount}" readonly>
-        </label>
-    </p>
+                            <td>
+                                <p>주문코드  : <span>${ord.orderCode}</span></p>
+                                <p>주문자명  : <span>${loginCustomer.csName}</span></p>
+                                <p>연락처  : <span>${ord.csPhone}</span></p>
+                                <p>우편번호  : <span>${ord.postCode}</span></p>
+                                <p>도로명주소  : <span>${loginCustomer.roadAddr}</span></p>
+                                <p>지번주소  : <span>${loginCustomer.lotNumAddr}</span></p>
+                                <p>상세주소  : <span>${loginCustomer.extraAddr}</span></p>
+                                <p>상품  : <span>${ord.prName}</span></p>
+                                <p>색상  : <span>${ord.prColor}</span></p>
+                                <p>사이즈  : <span>${ord.prSize}</span></p>
+                                <p>구매수량  : <span>${ord.orderAmount}</span></p>
+                                <p>주문날짜  : <span>${ord.orderDate}</span></p>
+                                <p>배송비  : <span>${ord.deliPrice}</span></p>
+                                
+                            </td>
 
-    <p>
-        <label>
-            # 주문날짜  : <input type="text" value="${ord.orderDate}" readonly>
-        </label>
-    </p>
+                            <td>
+                                <p>주문총금액  : <fmt:formatNumber value="${ord.orderTotalPrice}" pattern="#,###" />원</span></p>
+                            </td>
+                            <td>
+         
+                            </td>
+                           
 
-    <p>
-        <label>
-            # 배송비  : <input type="text" value="${ord.deliPrice}" readonly>
-        </label>
-    </p>
+                        </tr>
+                    
 
-    
-    <p>
-        <label>
-            # 주문총금액  : <input type="text" value="${ord.orderTotalPrice}" readonly>
-        </label>
-    </p>
+            
+                </tbody>
+            </table>
+            
+            <div class="basket-sum">
+            </div>
+        </section>
+        <!-- //section content > basket list -->
+
+        <!-- section content > basket empty -->
+        <div class="basket-empty"> <!-- 장바구니에 하나라도 담겨있을 시 hide클래스 추가 -->
+            <p>장바구니에 담은 상품이 없습니다.</p>
+            <button onclick="location.href='/'">상품 담으러 가기</button>
+        </div>
+        <!-- //section content > basket empty -->
         
+        <!-- section content > basket total -->
+        <section id="basket-total-container">
 
-</c:forEach>
+        
+            <div class="" id="basket-box"> 
+            
+                
+                <div class="bk-btn-box">
+                  
+                </div> 
+            </div>
 
-    
+        </section>
+    </c:forEach>
+        <!-- //section content > basket total -->
 
+        <!-- footer -->
+        <%@ include file="../include/footer.jsp" %>
+        <!-- //footer -->
+    </div>
+
+    <script>
+
+          
+
+    </script>
 
 </body>
+
 </html>
