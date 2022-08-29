@@ -1,23 +1,13 @@
 package com.shop.first.order.controller;
 
-import com.shop.first.cart.domain.Cart;
-import com.shop.first.cart.repository.CartMapper;
-import com.shop.first.cart.service.CartService;
 import com.shop.first.customer.domain.Customer;
-import com.shop.first.customer.repository.CustomerMapper;
-import com.shop.first.customer.service.CustomerService;
 import com.shop.first.order.domain.Order;
-import com.shop.first.order.repository.OrderMapper;
 import com.shop.first.order.service.OrderService;
-import com.shop.first.product.repository.ProductMapper;
-import com.shop.first.product.service.ProductService;
-import com.sun.org.apache.xpath.internal.operations.Or;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -34,11 +24,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class OrderController {
 
-    private final CustomerService customerService;
-
-    private final CartService cartService;
-
-    private final ProductService productService;
 
     private final OrderService orderService;
 
