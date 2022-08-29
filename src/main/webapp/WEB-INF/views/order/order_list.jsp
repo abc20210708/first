@@ -21,7 +21,7 @@
         <!-- section content > page banner -->
         <!-- 배너 자리 -->
         
-    <c:forEach var="ord" items="${ord}">
+ 
         <section id="page-banner-container" class="basket-bn">
             <div class="page-banner-img">
                 <div class="page-banner-text">
@@ -40,7 +40,7 @@
             <table class="basket-list"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
                 <tbody class="basket-list-pd">
       
-
+                    <c:forEach var="ord" items="${ord}">
                         <tr class="basket-pd-info">
 
                             <td>
@@ -78,7 +78,7 @@
                         </tr>
                     
 
-            
+                    </c:forEach>
                 </tbody>
             </table>
             
@@ -87,28 +87,6 @@
         </section>
         <!-- //section content > basket list -->
 
-        <!-- section content > basket empty -->
-        <div class="basket-empty"> <!-- 장바구니에 하나라도 담겨있을 시 hide클래스 추가 -->
-            <p>장바구니에 담은 상품이 없습니다.</p>
-            <button onclick="location.href='/'">상품 담으러 가기</button>
-        </div>
-        <!-- //section content > basket empty -->
-        
-        <!-- section content > basket total -->
-        <section id="basket-total-container">
-
-        
-            <div class="" id="basket-box"> 
-            
-                
-                <div class="bk-btn-box">
-                  
-                </div> 
-            </div>
-
-        </section>
-    </c:forEach>
-        <!-- //section content > basket total -->
 
         <!-- footer -->
         <%@ include file="../include/footer.jsp" %>
