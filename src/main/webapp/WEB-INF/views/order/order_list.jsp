@@ -25,8 +25,8 @@
         <section id="page-banner-container" class="basket-bn">
             <div class="page-banner-img">
                 <div class="page-banner-text">
-                    <p>${loginCustomer.csName}님</p>
-                    <p>주문내역</p>
+                    <p>${loginCustomer.csName}님 주문내역</p>
+                    <p>Order history</p>
                 </div>
                 <img src="/image/basket.png" alt="카테고리 배너 이미지">
             </div>
@@ -43,11 +43,7 @@
                     <c:forEach var="ord" items="${ord}">
                         <tr class="basket-pd-info">
 
-                            <td>
-                                <input type="checkbox" value="${c.cartCode}" name="cartChecked"
-                                    onclick="calcGoodsPrice('${product[status.index].prPrice}', this, '${c.cartAmount}')" id="input_check">
-                            </td>
-               
+                            
 
 
                             <td>
