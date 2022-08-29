@@ -6,7 +6,7 @@
 <html lang="ko">
 
 <head>
-    <title>The dishes Mall - 장바구니</title>
+    <title>The dishes Mall - 주문내역</title>
     <%@ include file="../include/static-head.jsp" %>
 </head>
 
