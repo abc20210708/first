@@ -21,7 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/cart")
+@RequestMapping("/cart")  //요청을 처리할 컨트롤러가 있다면 @RequestMapping을 통해
+                            //해당 메서드에 접근
 @Log4j2
 @RequiredArgsConstructor
 public class CartController {
@@ -29,11 +30,16 @@ public class CartController {
     private final CartService cartService;
 
     //장바구니 추가
-    @PostMapping("/add")
+    @PostMapping("/add") //클라이언트에 데이터를 전송하기위해 response 객체를 사용
     public String insert(Cart cart, HttpSession session, HttpServletResponse response)
         throws IOException, ServletException {
 
         log.info("장바구니 insert! " +session.getAttribute("loginCustomer"));
+
+        //세션 : 사용자의 정보가 서버에 저장된다.
+        // 서버 접속시 세션 ID를 발급 받아서 일정시간동안 유지된다
+
+        //세션에 저장된 데이터 가져오기
         Customer loginCustomer = (Customer) session.getAttribute("loginCustomer");
         int count = cartService.countCart(loginCustomer.getCsId(), cart.getPrCode());
 
@@ -51,15 +57,16 @@ public class CartController {
         }
         else {
             response.setCharacterEncoding("UTF-8");
+            //이때 contentType을 먼저 하지 않으면, 한글이 깨질 수 있음
             response.setContentType("text/html; charset=UTF-8");
 
             PrintWriter out = response.getWriter();
 
             out.println("<script>alert('이미 장바구니에 있는 상품입니다 :) ');");
-            out.println("history.back()");
+            out.println("history.back()"); //이전 페이지
             out.println("</script>");
             out.flush();
-            response.flushBuffer();
+            response.flushBuffer(); //버퍼에 있는 내용을 클라이언트에 전송
             out.close();
             return null;
         }
