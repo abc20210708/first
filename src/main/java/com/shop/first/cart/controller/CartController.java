@@ -24,7 +24,9 @@ import java.util.List;
 @RequestMapping("/cart")  //요청을 처리할 컨트롤러가 있다면 @RequestMapping을 통해
                             //해당 메서드에 접근
 @Log4j2
-@RequiredArgsConstructor
+@RequiredArgsConstructor //@RequiredArgsConstructor는 final 혹은 @NotNull이 붙은 필드의 생성자를
+// 자동으로 만들어준다. 이를 통해 새로운 필드를 추가할 때 다시 생성자를 만들거나 하는 등의 번거로움을 없앨 수 있다.
+// 하지만 자동적으로 생성자가 만들어지기 때문에 내가 예상하지 못한 결과나 오류가 발생할 수 있기 때문에 그런 점도 염두해둬야 한다.
 public class CartController {
 
     private final CartService cartService;
