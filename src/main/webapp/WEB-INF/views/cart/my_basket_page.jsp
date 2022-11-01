@@ -379,7 +379,7 @@
             for (let i = 0; i < list.length; i++) {
                 if (list[i].checked) {
                     //선택되어 있으면 배열에 값들을 저장함
-                    console.log(list[i].value);
+                    console.log("장바구니 선택 : " +list[i].value);
                     valueArr.push(list[i].value);
                 }
             }
