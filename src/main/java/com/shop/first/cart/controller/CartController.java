@@ -54,7 +54,7 @@ public class CartController {
         if (count == 0)  {
             log.info("장바구니 상품 레코드 확인 Controller");
             cart.setCsId(loginCustomer.getCsId());
-            cartService.insert(cart);
+            cartService.insert(cart); //동일 상품이 없다면 장바구니에 추가
             log.info(cart);
         }
         else {
