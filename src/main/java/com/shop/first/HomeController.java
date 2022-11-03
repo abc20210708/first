@@ -29,7 +29,6 @@ public class HomeController {
         if (loginCustomer == null) return "/main/index";
 
         model.addAttribute("loginCustomer", loginCustomer);
-        //return "login/customer";
         return "/main/index";
 
 

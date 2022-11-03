@@ -107,9 +107,9 @@ public class CustomerController {
         Customer loginCustomer = customerService.login(customer.getCsId(), customer.getCsPw());
 
         if (loginCustomer != null) {
+            //세션(Session)의 속성
             session.setAttribute("loginCustomer", loginCustomer);
             log.info("로그인 유저: " + loginCustomer);
-            //return "customer/loginHome";
             return "redirect:/";
         }
 
@@ -129,6 +129,21 @@ public class CustomerController {
         }
         return  null;
     }
+
+    /*
+        세션(Session)의 속성
+
+        세션의 속성 설정은 session 객체의 setAttribute() 메소드를 사용한다.
+        session.setAttribute("id", "value");
+        이때 주의할 사항은 세션의 속성 값은 객체 형태만 올 수 있다는 것이다.
+
+        session 객체는 웹 브라우저와 매핑되므로 해당 웹 브라우저를 닫지 않는 한 같은 창에서
+        열려진 페이지는 모두 같은 session 객체를 공유하게 된다.
+        따라서 session 객체의 setAttribute() 메소드를 사용해서 세션의 속성을 지정하게 되면
+        계속 상태를 유지하는 기능을 사용할 수 있게 된다.
+
+        참고블로그 https://xzio.tistory.com/71
+*/
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
