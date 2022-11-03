@@ -8,8 +8,6 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 @Log4j2
 @RequiredArgsConstructor
@@ -72,5 +70,13 @@ public class CustomerService {
         }
         return null;
     }
+
+    /* BCryptPasswordEncoder란?
+
+    스프링 시큐리티(Spring Seurity) 프레임워크에서 제공하는 클래스 중 하나로 비밀번호를
+    암호화하는 데 사용할 수 있는 메서드를 가진 클래스입니다.
+
+    참고블로그 https://kimvampa.tistory.com/129
+    */
 
 }//
