@@ -68,6 +68,9 @@ public class CustomerController {
         return "customer/info";
     }
 
+
+    //============= 화면(view)으로 서버 데이터 보내기 ============//
+    //서버에서 클라이언트 화면으로 데이터를 보낼 땐 Model 객체를 활용합니다.
     //회원 정보 상세보기
     @PostMapping("/info")
     public String content(Model model, ModCustomer modCustomer) {
