@@ -79,6 +79,10 @@ public class CustomerController {
         return "redirect:/customer/info?csId="+loginCustomer.getCsId();
     }
 
+    //요청 파라미터 받기: 클라이언트에서 서버로 전송된 데이터
+    // redirect:/customer/info?csId="+loginCustomer.getCsId()
+    ///물음표 뒤가 요청 파라미터
+
     //공지사항 요청 - (화면)
     /*
         @GetMapping("/notice")

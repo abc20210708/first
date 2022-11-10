@@ -1,6 +1,5 @@
 package com.shop.first.product.controller;
 
-import com.shop.first.category.service.CategoryService;
 import com.shop.first.product.domain.Product;
 import com.shop.first.product.service.ProductService;
 import com.shop.first.productoption.domain.ProductOption;
@@ -33,7 +32,6 @@ public class ProductController extends HttpServlet {
 
     private final ProductOptionService productOptionService;
 
-    private final CategoryService categoryService;
 
     //상품 상세 조회(화면)
     @GetMapping("/info")

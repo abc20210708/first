@@ -8,7 +8,7 @@ import lombok.ToString;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@Getter @Setter @ToString
+@Getter @Setter @ToString //lombok 라이브러리가 제공하는 기능
 @NoArgsConstructor //파라미터가 없는 생성자를 생성
 public class Customer {
 
