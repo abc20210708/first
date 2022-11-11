@@ -42,8 +42,9 @@ public interface CartMapper {
     https://velog.io/@alicesykim95/Pathvariable-RequestParam-PathParam-Pram
     */
 
-    //@RequestParam
-    //참고 블로그 https://m42-orion.tistory.com/114?category=1085496
+    //@RequestParam 참고 블로그
+    //https://m42-orion.tistory.com/114?category=1085496
+    //https://m42-orion.tistory.com/114?category=1085496
 
     //장바구니 수량 수정
     void modifyCart(ModCart cart);
