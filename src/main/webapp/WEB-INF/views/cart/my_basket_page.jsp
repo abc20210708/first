@@ -390,12 +390,13 @@
                 let chk = confirm("정말 삭제하시겠습니까?");
                 $.ajax({
                     url: url, //전송 URL
-                    type: 'POST',
+                    type: 'POST', //http 요청 방식 (default : 'GET')
                     traditional: true,
-                    data: {
+                    data: { //요청 시 포함되어질 데이터
                         valueArr: valueArr //보내고자하는 data 변수 설정
                     },
-                    success: function (jdata) {
+                    success: function (jdata) { 
+                        //정상적으로 응답을 받았을 경우 success 콜백이 호출
                         if (jdata = 1) {
                             alert("삭제했습니다.");
                             location.replace("/cart/list"); //페이지 새로고침
