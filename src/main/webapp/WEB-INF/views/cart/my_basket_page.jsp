@@ -55,10 +55,12 @@
             <table class="basket-list"> <!-- 장바구니가 비어있을 시 hide클래스 추가 -->
                 <tbody class="basket-list-pd">
                     <c:forEach var="c" items="${cart}" varStatus="status">
-
+                        <!--  c:forEach 2개의 값을 사용하는 방법
+                                c:forEach 안에 varStatus="status"를 써주고
+                                product[status.index] 붙여주면 2개의 값을 사용할 수 있다. -->
                         <tr class="basket-pd-info">
 
-                            <td>
+                            <td> 
                                 <input type="checkbox" value="${c.cartCode}" name="cartChecked"
                                     onclick="calcGoodsPrice('${product[status.index].prPrice}', this, '${c.cartAmount}')" id="input_check">
                             </td>
@@ -236,9 +238,10 @@
         let amountArr = new Array();
         let nameArr = new Array();
 
+
          // 체크박스 개별선택, 해제 
          function calcGoodsPrice(prPrice, obj, cartAm) {
-
+            //onclick="calcGoodsPrice('${product[status.index].prPrice}', this, '${c.cartAmount}')"
 
             let result = Number(cartAm) * Number(prPrice);
             let chks = document.getElementsByName("cartChecked");
@@ -318,7 +321,7 @@
             $(".orderPrice").text(totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));  
 
             //배송비가 0면 0전달, 아니면 3000을 전달
-            $('input[name=orderTotalPrice]').attr('value',totalPrice);
+            $('input[name=orderTotalPrice]').attr('value',totalPrice); //.attr()은 요소(element)의 속성(attribute)의 값을 가져오거나 속성을 추가합니다.
             if(dv == 0) {
                 $('input[name=deliPrice]').attr('value', 0);
             } else {
