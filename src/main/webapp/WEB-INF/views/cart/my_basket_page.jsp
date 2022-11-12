@@ -347,9 +347,12 @@
                 let chks = document.getElementsByName("cartChecked");
                 let cart = document.getElementsByName("cartAmount");
                 sum = 0; //다시 0으로 초기화
+
+                //DOM이란 HTML 문서의 계층적 구조와 정보를 표현하며 이를 제어할 수 있는
+                //API를 제공하는 트리형태의 자료구조
                 for (let i = 0; i < chks.length; i++) {
                     str = chks[i].parentElement.nextElementSibling.nextElementSibling.
-                    nextElementSibling.firstElementChild.textContent;
+                    nextElementSibling.firstElementChild.textContent; //부모, 형제 노드 탐색
                     n = parseInt(str.replace(/,/g, ""));
                     arr[i] = n;
                     fSum = arr[i] * cart[i].value;
