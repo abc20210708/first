@@ -17,6 +17,10 @@ public class CartService {
 
     private final CartMapper cartMapper;
 
+    //매개변수와 인자의 차이점은 쓰임의 차이에 있습니다.
+    // 함수를 정의할 때 사용되는 변수를 매개변수
+    // 실제로 함수가 호출될 때 넘기는 변수값을 인자
+
     //장바구니 추가
     public void insert(Cart cart) {
         cartMapper.insert(cart);
