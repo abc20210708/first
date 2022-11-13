@@ -31,6 +31,16 @@ public class CartController {
 
     private final CartService cartService;
 
+    /*
+    static final = "공통적인/고정된" + "최종적인"
+
+    final 의 경우 생성자에서 초기화를 하게 되는 경우라면 객체마다 다른 값들을 가질 수 있다.
+    (변경이 안될뿐) 그러므로 final 자체만으로는 온전한 상수를 의미할 수 없다.
+    하지만 static을 붙이게 되면 이미 공유되는 변수(메모리에서 유일한 변수) 이므로,
+    객체마다 다른 값들을 가질 수 없고 + final 이므로 값에 대한 수정도 불가능하다.
+    참고 블로그 https://velog.io/@yyy96/final
+    * */
+
     //장바구니 추가
     //사용자의 요청 URI: /add
     @PostMapping("/add") //클라이언트에 데이터를 전송하기위해 response 객체를 사용
