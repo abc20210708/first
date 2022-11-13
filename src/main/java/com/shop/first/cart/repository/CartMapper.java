@@ -9,6 +9,8 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 @Mapper
+//* 마커 인터페이스: 기능이 있는게 아니라 마커, 즉 무언가 표시를 하기 위한 인터페이스를 의미한다.
+//즉, @Mapper는 단순히 '이것은 매퍼입니다!!'라는 것을 표시하기 위한 어노테이션이라는 것이다.
 public interface CartMapper {
 
     //장바구니 추가
