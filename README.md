@@ -1,5 +1,5 @@
 # first
-쇼핑몰 프로젝트
+<b>쇼핑몰 프로젝트<b>
 
 <b>코드 요약<b> <br>https://www.notion.so/99b4b7dd60fa4807b8b446050962a703
 <br>
