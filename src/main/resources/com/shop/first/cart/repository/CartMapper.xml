@@ -17,15 +17,13 @@
     </resultMap>
 
     <!-- 장바구니 동일한 상품 레코드 확인   -->
-<!-- ( true일 때는 1, false일 때는 0으로 resultType => int 사용 )  -->
+<!-- ( true 일 때는 1, false 일 때는 0으로 resultType => int 사용 )  -->
     <select id="countCart" resultType="int">
-        SELECT case when COUNT(product_code)>=1 then 1 else 0 end as isExisted
-        FROM
-        cart
-        WHERE
-        customer_id = #{csId}
-        AND
-        product_code = #{prCode}
+        SELECT case when COUNT(product_code)>=1
+        then 1 else 0 end as isExisted
+        FROM cart
+        WHERE customer_id = #{csId}
+        AND product_code = #{prCode}
     </select>
 
     <!-- 장바구니 삭제   -->
