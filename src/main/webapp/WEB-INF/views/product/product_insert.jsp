@@ -111,7 +111,7 @@
     </p>
 
 
-
+    <!--c:forEach 반복문  #참고 블로그 https://thefif19wlsvy.tistory.com/61 -->
     <c:forEach var="list" items="${list}">   
 
         <p>
