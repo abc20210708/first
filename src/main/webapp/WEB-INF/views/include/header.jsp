@@ -37,7 +37,9 @@
                 </a>
             </c:if>
             <a href="#"><i class="far fa-heart"></i></a>
-            <a href="#" onclick="cartList('${loginCustomer}')"><i class="fas fa-cart-plus"></i></a>
+            <c:if test="${loginCustomer != null}">
+                <a href="#"><i class="fas fa-cart-plus"></i></a>
+            </c:if>
             </ul>
         </nav>
     </div>
