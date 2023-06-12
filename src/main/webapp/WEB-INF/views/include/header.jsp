@@ -38,9 +38,9 @@
             </c:if>
             <a href="#"><i class="far fa-heart"></i></a>
             <c:if test="${loginCustomer != null}">
-                <a href="#"><i class="fas fa-cart-plus"></i></a>
+                <a href="/cart/list"><i class="fas fa-cart-plus"></i></a>
             </c:if>
-            <!-- onclick="cartList('${loginCustomer}')" -->
+            
             </ul>
         </nav>
     </div>
@@ -54,6 +54,7 @@
         $nav.toggleClass('scroll', $(this).scrollTop() > $nav.height());
     });
 
+    // onclick="cartList('${loginCustomer}')" 
     function cartList(target) {
         if (target) {
             location.href = "/cart/list";
