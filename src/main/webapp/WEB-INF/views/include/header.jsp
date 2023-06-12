@@ -40,6 +40,7 @@
             <c:if test="${loginCustomer != null}">
                 <a href="#"><i class="fas fa-cart-plus"></i></a>
             </c:if>
+            <!-- onclick="cartList('${loginCustomer}')" -->
             </ul>
         </nav>
     </div>
