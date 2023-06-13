@@ -165,3 +165,24 @@ public class CustomerController {
 
 
 }//
+
+/* 참고 https://melonicedlatte.com/2021/07/18/182600.html
+Lombok의 대표적인 Annotation과 역할
+Lombok은 코드를 크게 줄여주어 가독성을 크게 높힐 수 있는 라이브러리입니다.
+ 대표적인 Annotation은 아래와 같습니다.
+
+@Setter
+Class 모든 필드의 Setter method를 생성해줍니다.
+
+@Getter
+Class 모든 필드의 Getter method를 생성해줍니다.
+
+@AllArgsConstructor
+Class 모든 필드 값을 파라미터로 받는 생성자를 추가합니다.
+
+@NoArgsConstructor
+Class 기본 생성자를 자동으로 추가해줍니다.
+
+@ToString
+Class 모든 필드의 toString method를 생성한다.
+* */
