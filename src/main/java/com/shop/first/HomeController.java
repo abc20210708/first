@@ -19,13 +19,13 @@ public class HomeController {
     private final ProductService productService;
 
     @GetMapping("/")
-    public String home(
+    public String home( // 참고 블로그 https://develop-writing.tistory.com/89
             @SessionAttribute(name = "loginCustomer", required = false) Customer loginCustomer,
             HttpServletRequest request, Model model ) {
 
         List<Product> productList = productService.getList();
         model.addAttribute("articles", productList);
-
+        
         if (loginCustomer == null) return "/main/index";
 
         model.addAttribute("loginCustomer", loginCustomer);
