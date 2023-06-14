@@ -23,6 +23,7 @@ public class HomeController {
             @SessionAttribute(name = "loginCustomer", required = false) Customer loginCustomer,
             HttpServletRequest request, Model model ) {
 
+        // https://itjy2.tistory.com/111
         List<Product> productList = productService.getList();
         model.addAttribute("articles", productList);
 
