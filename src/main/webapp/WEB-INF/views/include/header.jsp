@@ -28,6 +28,7 @@
                     </label>
                 </form>
             </a>
+            <!--JSP 값 전달 참고 블로그  https://jddng.tistory.com/103 -->
             <c:if test="${loginCustomer == null}">
                 <a href="#" class="sign-in-up" id="singUpBtn" onclick="javascript:doDisplay()">
                     <span>로그인</span>
