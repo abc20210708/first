@@ -25,8 +25,8 @@ public class HomeController {
 
         List<Product> productList = productService.getList();
         model.addAttribute("articles", productList);
-        
-        if (loginCustomer == null) return "/main/index";
+
+        //if (loginCustomer == null) return "/main/index";
 
         model.addAttribute("loginCustomer", loginCustomer);
         return "/main/index";
