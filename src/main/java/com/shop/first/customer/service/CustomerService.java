@@ -57,7 +57,7 @@ public class CustomerService {
     }
 
     //회원 로그인 중간처리
-    public Customer login(String csId, String csPw) throws Exception {
+    public Customer login(String csId, String csPw)  {
         Customer findCustomer = customerMapper.getCustomer(csId);
         log.info("회원 로그인 service---");
 
