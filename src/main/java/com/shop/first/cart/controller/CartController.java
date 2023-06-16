@@ -29,7 +29,7 @@ import java.util.List;
 // 하지만 자동적으로 생성자가 만들어지기 때문에 내가 예상하지 못한 결과나 오류가 발생할 수 있기 때문에 그런 점도 염두해둬야 한다.
 public class CartController {
 
-    private final CartService cartService;
+
 
     /*
     static final = "공통적인/고정된" + "최종적인"
@@ -43,25 +43,22 @@ public class CartController {
 
     //장바구니 추가
     //사용자의 요청 URI: /add
+
+    private final CartService cartService;
+
     @PostMapping("/add") //클라이언트에 데이터를 전송하기위해 response 객체를 사용
     public String insert(Cart cart, HttpSession session, HttpServletResponse response)
         throws IOException, ServletException {
 
         log.info("장바구니 insert! " +session.getAttribute("loginCustomer"));
 
-        //세션 : 사용자의 정보가 서버에 저장된다.
-        // 서버 접속시 세션 ID를 발급 받아서 일정시간동안 유지된다
+        //세션 : 사용자의 정보가 서버에 저장,서버 접속시 세션 ID를 발급 받아서 일정시간동안 유지
 
         //세션에 저장된 데이터 가져오기
         Customer loginCustomer = (Customer) session.getAttribute("loginCustomer");
         int count = cartService.countCart(loginCustomer.getCsId(), cart.getPrCode());
 
-        log.info("(cart):" +cart);
-        log.info("로그 확인하기 1: "+ loginCustomer.getCsId());
-        log.info("로그 확인하기 2: "+ cart.getPrCode());
-
         //장바구니에 기존 상품이 있는지 검사
-        log.info("count =============> "+ count);
         if (count == 0)  {
             log.info("장바구니 상품 레코드 확인 Controller");
             cart.setCsId(loginCustomer.getCsId());
@@ -81,7 +78,6 @@ public class CartController {
             out.flush();
             response.flushBuffer(); //버퍼에 있는 내용을 클라이언트에 전송
             out.close();
-            return null;
         }
 
         return "redirect:/cart/list";
