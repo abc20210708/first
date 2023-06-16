@@ -134,7 +134,7 @@ public class CustomerController {
             out.close();
 
         }
-        return  null;
+        return "/main/index";
     }
 
     /*
