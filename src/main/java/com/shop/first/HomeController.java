@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -21,7 +20,8 @@ public class HomeController {
     @GetMapping("/")
     public String home( // 참고 블로그 https://develop-writing.tistory.com/89
             @SessionAttribute(name = "loginCustomer", required = false) Customer loginCustomer,
-            HttpServletRequest request, Model model ) {
+           // HttpServletRequest request,
+                        Model model ) {
 
         // https://itjy2.tistory.com/111
         List<Product> productList = productService.getList();
