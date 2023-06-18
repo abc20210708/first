@@ -18,20 +18,21 @@ public class HomeController {
     private final ProductService productService;
 
     @GetMapping("/")
-    public String home( // 참고 블로그 https://develop-writing.tistory.com/89
-            @SessionAttribute(name = "loginCustomer", required = false) Customer loginCustomer,
-           // HttpServletRequest request,
-                        Model model ) {
+    public String home( // 참고 블로그 https://innovation123.tistory.com/57
+            @SessionAttribute(name = "loginCustomer",
+                    required = false) Customer loginCustomer,
+           Model model) {
 
         // https://itjy2.tistory.com/111
         List<Product> productList = productService.getList();
         model.addAttribute("articles", productList);
 
-        //if (loginCustomer == null) return "/main/index";
-
         model.addAttribute("loginCustomer", loginCustomer);
         return "/main/index";
 
-
     }
 }//
+/* @SessionAttribute
+스프링에서 제공하는 HttpSession의 로그인 여부 조회 기능을
+편리하게 사용할 수 있게 해주는 Annotation
+* */
