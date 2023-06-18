@@ -163,8 +163,8 @@
                                 <button id="opbtn02" type="submit">바로구매</button>
                             </div>
 
-                                <input type="hidden" name="csId" value="${loginCustomer.csId}"> 
-                                <input type="hidden" name="prCode" value="${p.prCode}">   
+                                <!-- <input type="hidden" name="csId" value="${loginCustomer.csId}">  -->
+                                <!-- <input type="hidden" name="prCode" value="${p.prCode}">    -->
                                  
 
                                 <!-- <div class="sale-basket-btn"> -->
