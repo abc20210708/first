@@ -474,15 +474,6 @@
         });
 
 
-        
-        function cartList(target) {
-            if(target) {
-                location.href = "/cart/list";
-            } else {
-                alert("로그인 후 이용해주세요 :)");
-            }
-        }
-      
     </script>
 
 </body>
