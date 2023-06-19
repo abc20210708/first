@@ -20,7 +20,7 @@ public class DataBaseConfig {
         config.setJdbcUrl("jdbc:oracle:thin:@localhost:1521:xe");
         config.setDriverClassName("oracle.jdbc.driver.OracleDriver");
         config.setUsername("team_web");
-        config.setPassword("1234");
+        config.setPassword("0000");
 
         return  new HikariDataSource(config);
     }
