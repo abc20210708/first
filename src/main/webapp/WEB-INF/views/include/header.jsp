@@ -30,19 +30,19 @@
             </a>
             <!--JSP 값 전달 참고 블로그  https://jddng.tistory.com/103 -->
             <!-- 로그인된 사용자가 없는 경우에만 실행 -->
-            <c:if test="${loginCustomer == null}">
+            <!-- <c:if test="${loginCustomer == null}"> -->
                 <a href="#" class="sign-in-up" id="singUpBtn" onclick="javascript:doDisplay()">
                     <span>로그인</span>
                 </a>
                 <a href="/customer/account" class="sign-in-up">
                     <span>회원가입</span>
                 </a>
-            </c:if>
+            <!-- </c:if> -->
             <a href="#"><i class="far fa-heart"></i></a>
+            <a href="#"><i class="fas fa-cart-plus"></i></a>
             <!-- 로그인된 사용자가 있을 경우에만 실행 -->
-            <c:if test="${loginCustomer != null}">
-                <a href="/cart/list"><i class="fas fa-cart-plus"></i></a>
-            </c:if>
+            <!-- <c:if test="${loginCustomer != null}"> -->
+            <!-- </c:if> -->
             
             </ul>
         </nav>
@@ -53,18 +53,24 @@
 
 
     $(document).scroll(function () {
-        var $nav = $("#header-container");
+        let $nav = $("#header-container");
         $nav.toggleClass('scroll', $(this).scrollTop() > $nav.height());
     });
 
-    // onclick="cartList('${loginCustomer}')" 
-    function cartList(target) {
-        if (target) {
+
+    //장바구니 버튼 클릭이벤트
+    let user = "${loginCustomer}"
+    const button = document.querySelector(".fa-cart-plus");
+
+    button.addEventListener('click', () => {
+        if(user) {
             location.href = "/cart/list";
         } else {
             alert("로그인 후 이용해주세요 :)");
         }
-    }
+    })
+
+ 
 
     // 로그인 창 열기
     function doDisplay() {
