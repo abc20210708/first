@@ -58,27 +58,25 @@ public class CartController {
         Customer loginCustomer = (Customer) session.getAttribute("loginCustomer");
         int count = cartService.countCart(loginCustomer.getCsId(), cart.getPrCode());
 
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+
+        PrintWriter out = response.getWriter();
+
         //장바구니에 기존 상품이 있는지 검사
         if (count == 0)  {
-            log.info("장바구니 상품 레코드 확인 Controller");
             cart.setCsId(loginCustomer.getCsId());
             cartService.insert(cart); //동일 상품이 없다면 장바구니에 추가
-            log.info(cart);
+            out.println("<script>alert('추가완료! ');");
         }
         else {
-            response.setCharacterEncoding("UTF-8");
-            //이때 contentType을 먼저 하지 않으면, 한글이 깨질 수 있음
-            response.setContentType("text/html; charset=UTF-8");
-
-            PrintWriter out = response.getWriter();
-
             out.println("<script>alert('이미 장바구니에 있는 상품입니다 :) ');");
-            out.println("history.back()"); //이전 페이지
-            out.println("</script>");
-            out.flush();
-            response.flushBuffer(); //버퍼에 있는 내용을 클라이언트에 전송
-            out.close();
         }
+        out.println("history.back()");
+        out.println("</script>");
+        out.flush();
+        response.flushBuffer(); //버퍼에 있는 내용을 클라이언트에 전송
+        out.close();
 
         return "redirect:/cart/list";
 
