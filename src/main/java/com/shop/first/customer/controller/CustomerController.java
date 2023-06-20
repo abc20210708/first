@@ -109,14 +109,12 @@ public class CustomerController {
     @PostMapping("/login")
     public String loginCustomer(Customer customer, HttpServletRequest request,
                                 HttpServletResponse response) throws Exception {
+
         HttpSession session = request.getSession();
-        log.info("회원 로그인 검증 POST---");
         Customer loginCustomer = customerService.login(customer.getCsId(), customer.getCsPw());
 
         if (loginCustomer != null) {
-            //세션(Session)의 속성
             session.setAttribute("loginCustomer", loginCustomer);
-            log.info("로그인 유저: " + loginCustomer);
             return "redirect:/";
         }
 
