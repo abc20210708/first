@@ -7,6 +7,8 @@ import lombok.ToString;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+//@Data 사용금지
+// 참고 블로그 https://kwonnam.pe.kr/wiki/java/lombok/pitfall
 @Getter @Setter @ToString
 public class Cart {
 
