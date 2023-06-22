@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 //@Data 사용금지
+// @Data를 사용하는 것은 지양하는 것이 좋습니다. 왜냐하면 무분별하게 Setter가 남용될 수 있기 때문에,
+//변경하면 안되는 값이 변경될 수 있는 가능성이 생겨 객체의 안전성을 보장할 수 없기 때문입니다.
 // 참고 블로그 https://kwonnam.pe.kr/wiki/java/lombok/pitfall
 @Getter @Setter @ToString
 public class Cart {
