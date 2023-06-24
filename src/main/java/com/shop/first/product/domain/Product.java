@@ -1,11 +1,10 @@
 package com.shop.first.product.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 @Setter @Getter @ToString
 public class Product {

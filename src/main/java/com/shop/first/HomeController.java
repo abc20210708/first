@@ -31,6 +31,16 @@ public class HomeController {
         return "/main/index";
 
     }
+
+    /*
+    JSON 형태로 클라이언트에게 응답
+    // 참고 블로그 https://blog.naver.com/sosow0212/222666121884
+    @GetMapping("/")
+    public ResponseEntity<?> home() {
+        return new ResponseEntity<>(productService.getList(), HttpStatus.OK);
+    }
+    * */
+
 }//
 /* @SessionAttribute
 스프링에서 제공하는 HttpSession의 로그인 여부 조회 기능을
