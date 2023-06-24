@@ -47,7 +47,7 @@ public class CartController {
     private final CartService cartService;
 
     @PostMapping("/add") //클라이언트에 데이터를 전송하기위해 response 객체를 사용
-    public String insert(Cart cart, HttpSession session, HttpServletResponse response)
+    public void insert(Cart cart, HttpSession session, HttpServletResponse response)
         throws IOException, ServletException {
 
         log.info("장바구니 insert! " +session.getAttribute("loginCustomer"));
@@ -77,8 +77,6 @@ public class CartController {
         out.flush();
         response.flushBuffer(); //버퍼에 있는 내용을 클라이언트에 전송
         out.close();
-
-        return "redirect:/cart/list";
 
     }
 
