@@ -1,5 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><!-- JSTL 코어 라이브러리 선언 -->
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!-- header -->
@@ -30,8 +30,8 @@
             </a>
             <!--JSP 값 전달 참고 블로그  https://jddng.tistory.com/103 -->
 
-            <!-- 로그인된 사용자가 없는 경우에만 실행 -->
-            <c:if test="${loginCustomer == null}">
+            <!-- 로그인된 사용자가 없는 경우에만 실행  -->
+            <c:if test="${loginCustomer == null}">  <!-- c:if문 속성 test : 평가할 조건 (필수) -->
                 <a href="#" class="sign-in-up" id="singUpBtn" onclick="javascript:doDisplay()">
                     <span>로그인</span>
                 </a>
@@ -44,7 +44,6 @@
             <!-- 로그인된 사용자가 있을 경우에만 실행 -->
             <!-- <c:if test="${loginCustomer != null}"> -->
             <!-- </c:if> -->
-            
             </ul>
         </nav>
     </div>
