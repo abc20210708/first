@@ -10,6 +10,10 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackages = "com.shop.first")
+//@ComponentScan("com.package1.component")
+//@ComponentScan에는 다양한 설정들이 있다. 먼저 basePackages는 패키지 경로에 대한 설정이다.
+// basePackages는 기본 설정 값이다. 즉 다음 두 코드는 같은 역할을 한다. 해당 경로를 포함하는 하위 패키지를 모두 스캔한다.
+// 참고 블로그 https://nankisu.tistory.com/4
 public class DataBaseConfig {
 
     //DB 접속정보 설정 (DataSource 설정)

@@ -41,7 +41,7 @@ public class Cart {
         this.prSize = prSize;
     }
 
-    // ResultSet  SQL 쿼리 실행 결과로 반환되는 테이블 형식의 데이터를 나타냅니다. 
+    // ResultSet  SQL 쿼리 실행 결과로 반환되는 테이블 형식의 데이터를 나타냅니다.
     public Cart(ResultSet rs) throws SQLException {
         this.cartCode = rs.getInt("cart_code");
         this.csId = rs.getString("customer_id");
