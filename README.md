@@ -3,7 +3,7 @@
 
 
 <br>
-<b>ERD Cloud<b> <br>https://www.erdcloud.com/d/v5HZLTBb7ZLcegT8q![image](https://github.com/abc20210708/first/assets/87113813/fc363f27-eb09-44b9-a61a-3616f4a82705)
+<b>ERD Cloud<b> <br>https://www.erdcloud.com/d/v5HZLTBb7ZLcegT8q
 <br>
 
 
